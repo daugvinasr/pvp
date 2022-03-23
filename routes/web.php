@@ -16,6 +16,7 @@ use App\Http\Controllers\AuthController;
 
 Route::get('/', [MainController::class, 'showMain']);
 Route::get('/guides', [MainController::class, 'showGuides']);
+Route::get('/readguide', [MainController::class, 'showReadGuide']);
 Route::get('/fixers', [MainController::class, 'showFixers']);
 Route::get('/locations', [MainController::class, 'showLocations']);
 Route::get('/login', [AuthController::class, 'showLogin']);

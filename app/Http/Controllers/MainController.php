@@ -22,4 +22,8 @@ class MainController extends Controller
 
         return view('locations');
     }
+    public function showReadGuide(){
+
+        return view('readguide');
+    }
 }
