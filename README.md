@@ -8,7 +8,7 @@
 ![gif](https://i.imgur.com/EjDe3IW.png)
 
 ## Įsirašius composer būtinai turi būti pridėta php į path
-![gif](https://i.postimg.cc/7hkVXrhd/x-Es-Aw9-Ybun.gif)
+![gif](https://i.imgur.com/TO4t8XL.png)
 
 
 ## Repositorijos atsisiuntimas
