@@ -8,7 +8,7 @@
 ![gif](https://i.imgur.com/EjDe3IW.png)
 
 ## Įsirašius composer būtinai turi būti pridėta php į path
-![gif](https://cdn.discordapp.com/attachments/886923278273380373/956573931396034560/xEsAw9Ybun.gif)
+![gif](https://i.postimg.cc/7hkVXrhd/x-Es-Aw9-Ybun.gif)
 
 
 ## Repositorijos atsisiuntimas
