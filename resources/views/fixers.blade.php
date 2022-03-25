@@ -14,9 +14,9 @@
                                     </div>
                                 </div>
                                 <div class="px-6 mt-16">
-                                    <h1 class="font-bold text-3xl text-center mb-1">Vardas Pavardė</h1>
-                                    <p class="text-gray-800 text-sm text-center">Specializacija</p>
-                                    <p class="text-center text-gray-600 text-base pt-3 font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <h1 class="font-bold text-3xl text-center mb-1">Petras Taisovas</h1>
+                                    <p class="text-gray-800 text-sm text-center">Taisytojas</p>
+                                    <p class="text-center text-gray-600 text-base pt-3 font-normal">Taisau dalykus, duok man aš viską sutaisysiu, netiki?</p>
                                     <div class="w-full flex justify-center pt-5 pb-5">
                                         <a href="javascript:void(0)" class="mx-5">
                                             <div aria-label="Github" role="img">
