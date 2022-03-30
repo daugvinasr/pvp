@@ -20,5 +20,7 @@ Route::get('/readguide', [MainController::class, 'showReadGuide']);
 Route::get('/fixers', [MainController::class, 'showFixers']);
 Route::get('/locations', [MainController::class, 'showLocations']);
 Route::get('/login', [AuthController::class, 'showLogin']);
+Route::post('/login', [AuthController::class, 'signIn']);
+Route::post('/register', [AuthController::class, 'addUser']);
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/register', [AuthController::class, 'showRegister']);
