@@ -23,6 +23,7 @@ class AuthController extends Controller
         $user->username = request('username');
         $user->email = request('email');
         $user->password = Hash::make(request('password'));
+        $user->role = 'user';
         $user->save();
         return redirect('/login');
     }
@@ -36,6 +37,7 @@ class AuthController extends Controller
             if (count($data) > 0) {
                 Session::put('id_user', $data[0]->id);
                 Session::put('username', $data[0]->username);
+                Session::put('role', $data[0]->role);
                  return redirect('/');
             }
         }
