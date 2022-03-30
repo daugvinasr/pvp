@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\repairmanController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +18,7 @@ use App\Http\Controllers\AuthController;
 Route::get('/', [MainController::class, 'showMain']);
 Route::get('/guides', [MainController::class, 'showGuides']);
 Route::get('/readguide', [MainController::class, 'showReadGuide']);
-Route::get('/fixers', [MainController::class, 'showFixers']);
+Route::get('/fixers', [repairmanController::class, 'showFixers']);
 Route::get('/locations', [MainController::class, 'showLocations']);
 Route::get('/login', [AuthController::class, 'showLogin']);
 Route::post('/login', [AuthController::class, 'signIn']);
