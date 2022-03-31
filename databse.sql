@@ -54,6 +54,7 @@ CREATE TABLE repairmans
 (
 	name varchar (32) NOT NULL,
 	surname varchar (32) NOT NULL,
+	city varchar (32) NOT NULL,
 	phone_number varchar (32) NOT NULL,
 	email varchar (32) NOT NULL,
 	specialization varchar (64) NOT NULL,

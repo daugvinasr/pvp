@@ -13,7 +13,7 @@
                 </div>
                 <div class="mb-6">
                     <label for="name" class="block text-gray-800 font-bold">Slaptažodis:</label>
-                    <input  name="password" type="text" class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />
+                    <input  name="password" type="password" class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />
                     @error('password')
                     {{ $message }}
                     @enderror

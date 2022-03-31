@@ -22,6 +22,22 @@
                 </div>
 
                 <div class="mb-6">
+                    <label for="name" class="block text-gray-800 font-bold">Miestas:</label>
+                    <input name="city" type="text"  class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />
+                    @error('city')
+                    {{ $message }}
+                    @enderror
+                </div>
+
+                <div class="mb-6">
+                    <label for="name" class="block text-gray-800 font-bold">El. paštas:</label>
+                    <input name="email" type="email"  class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />
+                    @error('email')
+                    {{ $message }}
+                    @enderror
+                </div>
+
+                <div class="mb-6">
                     <label for="name" class="block text-gray-800 font-bold">Telefono numeris:</label>
                     <input name="phone_number" type="text"  class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />
                     @error('phone_number')

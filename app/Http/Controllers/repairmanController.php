@@ -20,6 +20,8 @@ class repairmanController extends Controller
         request()->validate([
             'name' => 'required',
             'surname' => 'required',
+            'email' => 'required',
+            'city' => 'required',
             'phone_number' => 'required',
             'specialization' => 'required',
             'description' => 'required',
@@ -38,7 +40,8 @@ class repairmanController extends Controller
             $repairman->name = request('name');
             $repairman->surname = request('surname');
             $repairman->phone_number = request('phone_number');
-            $repairman->email = "why do i exist";
+            $repairman->email = request('email');
+            $repairman->city = request('city');
             $repairman->specialization = request('specialization');
             $repairman->description = request('description');
             $repairman->photo_url = request('photo_url');
