@@ -35,15 +35,16 @@ class AuthController extends Controller
         $data = users::select('*')->where([['username','=',request('username')]])->get();
         if (!$data->isEmpty() && Hash::check(request('password'), $data[0]->password)) {
             if (count($data) > 0) {
-                Session::put('id_user', $data[0]->id);
+//                error_log($data[0]->users_id);
+//                error_log($data[0]->username);
+//                error_log($data[0]->role);
+                Session::put('id_user', $data[0]->users_id);
                 Session::put('username', $data[0]->username);
                 Session::put('role', $data[0]->role);
                  return redirect('/');
             }
         }
-        else{
             return redirect('/login')->with('alert', 'Neteisingas slaptažodis');
-        }
     }
     public function logout(){
         Session::flush();

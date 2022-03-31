@@ -19,6 +19,11 @@ Route::get('/', [MainController::class, 'showMain']);
 Route::get('/guides', [MainController::class, 'showGuides']);
 Route::get('/readguide', [MainController::class, 'showReadGuide']);
 Route::get('/fixers', [repairmanController::class, 'showFixers']);
+
+Route::get('/addFixer', [repairmanController::class, 'showAddFixer']);
+Route::post('/addFixer', [repairmanController::class, 'addFixer']);
+
+
 Route::get('/locations', [MainController::class, 'showLocations']);
 Route::get('/login', [AuthController::class, 'showLogin']);
 Route::post('/login', [AuthController::class, 'signIn']);
