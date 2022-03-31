@@ -47,8 +47,12 @@ class repairmanController extends Controller
             $repairman->photo_url = request('photo_url');
             $repairman->fk_usersid = session('id_user');
             $repairman->save();
+            return redirect('/');
         }
-        return redirect('/');
+        else
+        {
+            return redirect('/addFixer')->with('errormessage', 'Jūs jau turitę tvarkytojo paskirą!');
+        }
     }
 
 
