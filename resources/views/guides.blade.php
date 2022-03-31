@@ -163,7 +163,7 @@
                 </div>
                 <!-- Card 4 Ends -->
             </div>
-            <div class="flex flex-wrap items-center lg:justify-between justify-center pb-10 mt-16">
+            <div class="flex flex-wrap items-center lg:justify-between justify-center mt-10">
                 <!-- Card 1 -->
                 <div tabindex="0" class="focus:outline-none mx-2 w-72 xl:mb-0 mb-8">
                     <div>

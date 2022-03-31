@@ -3,6 +3,17 @@
 <title></title>
 <meta charset="utf-8" />
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<style>
+    *::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    * {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+</style>
 <body>
 <header>
     <nav>
@@ -33,7 +44,7 @@
         </div>
     </nav>
 </header>
-<div class="h-screen bg-gray-100 flex justify-center">
+<div class="overflow-auto flex h-screen bg-gray-100 justify-center">
     @yield('content')
 </div>
 <div class="mx-auto container py-16 xl:px-20 lg:px-12 sm:px-6 px-4">
