@@ -11,7 +11,7 @@
 
 **Slaptažodis**: misrainesvyniotinis
 
-**[phpMyAdmin nuoroda](https://54.38.215.50/phpmyadmin)**
+**[phpMyAdmin nuoroda](http://54.38.215.50/phpmyadmin)**
 
 ## Įrašant xampp pasirinkti
 ![gif](https://i.imgur.com/EjDe3IW.png)
