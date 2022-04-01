@@ -1,8 +1,17 @@
-##Reikalinga
+## Reikalinga
 - [XAMPP 8.1.4 / PHP 8.1.4](https://www.apachefriends.org/download.html)
 - [Github Desktop](https://desktop.github.com/)
 - [PhpStorm](https://www.jetbrains.com/phpstorm/)
 - [composer](https://getcomposer.org/download/)
+
+## Bendra duomenų bazė
+**IP adresas**: 54.38.215.50:3306
+
+**Slapyvardis**: pvpuser
+
+**Slaptažodis**: misrainesvyniotinis
+
+**[phpMyAdmin nuoroda](https://54.38.215.50/phpmyadmin)**
 
 ## Įrašant xampp pasirinkti
 ![gif](https://i.imgur.com/EjDe3IW.png)

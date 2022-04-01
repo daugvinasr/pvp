@@ -22,7 +22,7 @@
                                     <div class="w-full flex justify-center pt-5 pb-5">
                                         <a href="">
                                             <div aria-label="phone number">
-                                                <a>Tel nr.:{{$data -> phone_number}}</a>
+                                                <a>Tel nr.: {{$data -> phone_number}}</a>
                                             </div>
                                         </a>
                                         <a href="" class="mx-1">
