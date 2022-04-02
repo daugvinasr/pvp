@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\repair_orders;
+use App\Models\repairmans;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
@@ -41,6 +43,19 @@ class AuthController extends Controller
                 Session::put('id_user', $data[0]->users_id);
                 Session::put('username', $data[0]->username);
                 Session::put('role', $data[0]->role);
+
+
+                //checking if user is repairman
+                $repairManData = repairmans::select('*')
+                    ->where([
+                        ['fk_usersid', '=', $data[0]->users_id]
+                    ])
+                    ->get();
+
+                if(!$repairManData->isEmpty()){
+                    Session::put("id_repairman", $repairManData[0]->repairmans_id);
+                }
+
                  return redirect('/');
             }
         }

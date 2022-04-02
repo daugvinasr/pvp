@@ -30,3 +30,6 @@ Route::post('/login', [AuthController::class, 'signIn']);
 Route::post('/register', [AuthController::class, 'addUser']);
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/register', [AuthController::class, 'showRegister']);
+
+Route::get('/showStatus', [repairmanController::class, 'showStatus']);
+

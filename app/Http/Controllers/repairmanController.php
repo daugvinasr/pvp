@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\repair_orders;
 use App\Models\repairmans;
 use Illuminate\Http\Request;
 
@@ -54,6 +55,34 @@ class repairmanController extends Controller
             return redirect('/addFixer')->with('errormessage', 'Jūs jau turitę tvarkytojo paskirą!');
         }
     }
+
+    public function showStatus(){
+
+        if (session('id_repairman') != null)
+        {
+            $statusData = repair_orders::select('*')
+                ->where([
+                    ['fk_repairmansid', '=', session('id_repairman')],
+                    //TODO: reik padaryt kad tik rodytu tik nesutvarkytus o ne visus
+                ])
+                ->get();
+
+//            $statusData = repair_orders::all();
+
+
+
+            return view('/showStatus', ['statusData' => $statusData]);
+        }
+        else
+        {
+            return redirect('/');
+        }
+
+    }
+
+
+
+
 
 
 
