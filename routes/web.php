@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\repairmanController;
+use App\Http\Controllers\profileController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,5 +34,10 @@ Route::post('/register', [AuthController::class, 'addUser']);
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/register', [AuthController::class, 'showRegister']);
 
-Route::get('/showStatus', [repairmanController::class, 'showStatus']);
+Route::get('/showOrders', [repairmanController::class, 'showOrders']);
+Route::get('/changeStatus/{id}/{status}', [repairmanController::class, 'changeStatus']);
+
+Route::get('/profile/{id}', [profileController::class, 'showProfile']);
+
+
 

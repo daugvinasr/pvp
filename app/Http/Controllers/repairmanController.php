@@ -8,16 +8,19 @@ use Illuminate\Http\Request;
 
 class repairmanController extends Controller
 {
-    public function showFixers(){
+    public function showFixers()
+    {
         $fixersData = repairmans::all();
         return view('/fixers', ['fixersData' => $fixersData]);
     }
 
-    public function showAddFixer(){
+    public function showAddFixer()
+    {
         return view('/addFixer');
     }
 
-    public function addFixer(){
+    public function addFixer()
+    {
         request()->validate([
             'name' => 'required',
             'surname' => 'required',
@@ -35,8 +38,7 @@ class repairmanController extends Controller
             ])
             ->get();
 
-        if ($repairmans->isEmpty())
-        {
+        if ($repairmans->isEmpty()) {
             $repairman = new repairmans();
             $repairman->name = request('name');
             $repairman->surname = request('surname');
@@ -49,41 +51,43 @@ class repairmanController extends Controller
             $repairman->fk_usersid = session('id_user');
             $repairman->save();
             return redirect('/');
-        }
-        else
-        {
+        } else {
             return redirect('/addFixer')->with('errormessage', 'Jūs jau turitę tvarkytojo paskirą!');
         }
     }
 
-    public function showStatus(){
-
-        if (session('id_repairman') != null)
-        {
+    public function showOrders()
+    {
+        if (session('id_repairman') != null) {
             $statusData = repair_orders::select('*')
                 ->where([
                     ['fk_repairmansid', '=', session('id_repairman')],
-                    //TODO: reik padaryt kad tik rodytu tik nesutvarkytus o ne visus
+                    ['status', '<', '3'],
                 ])
                 ->get();
-
-//            $statusData = repair_orders::all();
-
-
-
-            return view('/showStatus', ['statusData' => $statusData]);
-        }
-        else
-        {
+            return view('/showOrders', ['statusData' => $statusData]);
+        } else {
             return redirect('/');
         }
-
     }
 
-
-
-
-
+    public function changeStatus($id, $status)
+    {
+        $statusData = repair_orders::where('repair_orders_id', $id);
+//        status list: užsakytas, tvarkomas, atliktas, atmestas
+//        status list:    1     ,       2  ,     3   ,     4
+        switch ($status) {
+            case 1:
+                $statusData->update(['status' => 2]);
+                break;
+            case 2:
+                $statusData->update(['status' => 3]);
+                break;
+            default:
+                return redirect('/showOrders');
+        }
+        return redirect('/showOrders');
+    }
 
 
 }

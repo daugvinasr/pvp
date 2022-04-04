@@ -12,7 +12,12 @@ class repair_orders extends Model
 
     public function repairOrdersToUser()
     {
-        return $this->belongsTo(users::class, 'fk_usersid', 'id_user');
+        return $this->belongsTo(users::class, 'fk_usersid', 'users_id');
+    }
+
+    public function repairOrdersToDevice()
+    {
+        return $this->belongsTo(devices::class, 'fk_devicesid', 'devices_id');
     }
 
 }
