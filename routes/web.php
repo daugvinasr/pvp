@@ -5,6 +5,7 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\repairmanController;
 use App\Http\Controllers\profileController;
+use App\Http\Controllers\orderController;
 
 
 /*
@@ -34,8 +35,10 @@ Route::post('/register', [AuthController::class, 'addUser']);
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/register', [AuthController::class, 'showRegister']);
 
-Route::get('/showOrders', [repairmanController::class, 'showOrders']);
-Route::get('/changeStatus/{id}/{status}', [repairmanController::class, 'changeStatus']);
+Route::get('/showOrders', [orderController::class, 'showOrders']);
+Route::get('/changeStatus/{id}/{status}', [orderController::class, 'changeStatus']);
+Route::get('/cancelOrder/{id}', [orderController::class, 'cancelOrder']);
+
 
 Route::get('/profile/{id}', [profileController::class, 'showProfile']);
 

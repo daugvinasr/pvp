@@ -29,11 +29,21 @@
                                     <td class="px-4 py-3 text-ms font-semibold border text-center">{{ $status->repairOrdersToUser->username}}</td>
                                     <td class="px-4 py-3 text-ms font-semibold border text-center">{{ $status->repairOrdersToDevice->name}}</td>
                                     <td class="px-4 py-3 text-ms font-semibold border text-center">
-                                        <a
-                                            class="cursor-pointer py-2 px-4 block bg-indigo-500 text-white font-bold text-center rounded"
-                                            href="/changeStatus/{{$status->repair_orders_id}}/{{ $status->status}}"
-                                            type="submit">Pakeisti statusą
-                                        </a>
+                                        @if(session('id_repairman' != null))
+                                            <a
+                                                class="cursor-pointer py-2 px-4 block bg-indigo-500 text-white font-bold text-center rounded"
+                                                href="/changeStatus/{{$status->repair_orders_id}}/{{ $status->status}}"
+                                                type="submit">Pakeisti statusą
+                                            </a>
+                                        @else
+                                            <a
+                                                class="cursor-pointer py-2 px-4 block bg-indigo-500 text-white font-bold text-center rounded"
+                                                href="/cancelOrder/{{$status->repair_orders_id}}/"
+                                                type="submit">Atšaukti
+                                            </a>
+                                        @endif
+
+
                                     </td>
 
                                     </tbody>

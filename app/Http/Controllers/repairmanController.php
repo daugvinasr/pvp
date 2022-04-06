@@ -55,39 +55,4 @@ class repairmanController extends Controller
             return redirect('/addFixer')->with('errormessage', 'Jūs jau turitę tvarkytojo paskirą!');
         }
     }
-
-    public function showOrders()
-    {
-        if (session('id_repairman') != null) {
-            $statusData = repair_orders::select('*')
-                ->where([
-                    ['fk_repairmansid', '=', session('id_repairman')],
-                    ['status', '<', '3'],
-                ])
-                ->get();
-            return view('/showOrders', ['statusData' => $statusData]);
-        } else {
-            return redirect('/');
-        }
-    }
-
-    public function changeStatus($id, $status)
-    {
-        $statusData = repair_orders::where('repair_orders_id', $id);
-//        status list: užsakytas, tvarkomas, atliktas, atmestas
-//        status list:    1     ,       2  ,     3   ,     4
-        switch ($status) {
-            case 1:
-                $statusData->update(['status' => 2]);
-                break;
-            case 2:
-                $statusData->update(['status' => 3]);
-                break;
-            default:
-                return redirect('/showOrders');
-        }
-        return redirect('/showOrders');
-    }
-
-
 }
