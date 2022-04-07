@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\repairmanController;
 use App\Http\Controllers\profileController;
 use App\Http\Controllers\orderController;
+use App\Http\Controllers\guideController;
 
 
 /*
@@ -20,7 +21,6 @@ use App\Http\Controllers\orderController;
 */
 
 Route::get('/', [MainController::class, 'showMain']);
-Route::get('/guides', [MainController::class, 'showGuides']);
 Route::get('/readguide', [MainController::class, 'showReadGuide']);
 Route::get('/fixers', [repairmanController::class, 'showFixers']);
 
@@ -38,6 +38,9 @@ Route::get('/register', [AuthController::class, 'showRegister']);
 Route::get('/showOrders', [orderController::class, 'showOrders']);
 Route::get('/changeStatus/{id}/{status}', [orderController::class, 'changeStatus']);
 Route::get('/cancelOrder/{id}', [orderController::class, 'cancelOrder']);
+
+Route::get('/guides', [guideController::class, 'showGuides']);
+Route::get('/showGuide/{id}', [guideController::class, 'showGuide']);
 
 
 Route::get('/profile/{id}', [profileController::class, 'showProfile']);

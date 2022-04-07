@@ -6,24 +6,23 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
-    public function showMain(){
-
+    public function showMain()
+    {
         return view('main');
     }
-    public function showGuides(){
 
-        return view('guides');
-    }
-    public function showFixers(){
-
+    public function showFixers()
+    {
         return view('fixers');
     }
-    public function showLocations(){
 
+    public function showLocations()
+    {
         return view('locations');
     }
-    public function showReadGuide(){
 
+    public function showReadGuide()
+    {
         return view('readguide');
     }
 }
