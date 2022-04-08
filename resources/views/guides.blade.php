@@ -2,6 +2,11 @@
 @section('content')
     <div tabindex="0" class="focus:outline-none">
         <!-- Remove py-8 -->
+        @if(session('role')=="admin")
+            <div class="ml-2 mt-6">
+                <a href="/addGuide" class="bg-indigo-600 px-8 py-2 rounded text-white hover:bg-indigo-500 text-sm">Sukurti gidą</a>
+            </div>
+        @endif
         <div class="mx-auto container py-8">
             <div class="flex flex-wrap items-center lg:justify-between justify-center">
 

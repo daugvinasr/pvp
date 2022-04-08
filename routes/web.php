@@ -41,7 +41,10 @@ Route::get('/cancelOrder/{id}', [orderController::class, 'cancelOrder']);
 
 Route::get('/guides', [guideController::class, 'showGuides']);
 Route::get('/showGuide/{id}', [guideController::class, 'showGuide']);
-
+Route::get('/addGuide', [guideController::class, 'showAddGuide']);
+Route::post('/addGuide', [guideController::class, 'addGuide']);
+Route::get('/addStep/{id}', [guideController::class, 'showAddStep']);
+Route::post('/addStep/{id}', [guideController::class, 'addStep']);
 
 Route::get('/profile/{id}', [profileController::class, 'showProfile']);
 

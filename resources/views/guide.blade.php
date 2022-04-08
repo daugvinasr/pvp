@@ -8,6 +8,11 @@
                 <h2 class="md:text-xl text-xl text-gray-800">Sunkumas: {{$guideInfo->difficulty}} iš 5</h2>
                 <h2 class="md:text-xl text-xl text-gray-800">Užtruks laiko: {{$guideInfo->time_required}} minučių</h2>
                 <h3 class="md:text-lg text-xl text-gray-800">Reikalingi įrankiai ir dalys TBA</h3>
+                @if(session('role')=="admin")
+                    <div class="mt-6">
+                        <a href="/addStep/{{$guideInfo->repair_guides_id}}" class="bg-indigo-600 px-8 py-2 rounded text-white hover:bg-indigo-500 text-sm">Pridėti žingsnį</a>
+                    </div>
+                @endif
                 <div class="grid grid-cols-1 gap-8 mt-6">
                     @foreach($guide as $item)
                         <div class="flex flex-col md:flex-row">
@@ -22,6 +27,7 @@
                         </div>
                     @endforeach
                 </div>
+
             </div>
         </div>
     </div>
