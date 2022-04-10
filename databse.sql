@@ -18,6 +18,32 @@ CREATE TABLE categories
 	PRIMARY KEY(categories_id)
 );
 
+
+CREATE TABLE news
+(
+    title varchar (64) NOT NULL,
+    picture varchar (400) NOT NULL,
+    text text NOT NULL,
+    date date NOT NULL,
+    news_id integer NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY(news_id)
+);
+
+(
+    address varchar (128) NOT NULL,
+    picture varchar (255) NOT NULL,
+    company_name varchar (128) NOT NULL,
+    phone_number varchar (255) NOT NULL,
+    email varchar (32) NOT NULL,
+    fk_categoriesid integer NOT NULL,
+    disposals_id integer NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY(disposals_id),
+    FOREIGN KEY(fk_categoriesid) REFERENCES categories (categories_id)
+);
+
+
+
+
 CREATE TABLE disposals
 (
 	address varchar (128) NOT NULL,
