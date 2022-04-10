@@ -22,7 +22,7 @@
                 <div class="flex items-center space-x-8">
                     <a href="/"><h1 class="text-xl lg:text-2xl font-bold cursor-pointer">Pavadinimas</h1></a>
                     <div class="hidden md:flex justify-around space-x-4">
-                        <a href="/guides" class="hover:text-indigo-600 text-gray-700">Taisymo gidai</a>
+                        <a href="/categories" class="hover:text-indigo-600 text-gray-700">Taisymo gidai</a>
                     </div>
                     <div class="hidden md:flex justify-around space-x-4">
                         <a href="/fixers" class="hover:text-indigo-600 text-gray-700">Taisytojai</a>
