@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\categories;
 use App\Models\devices;
 use App\Models\parts;
 use App\Models\repair_guides;
@@ -12,9 +13,20 @@ use function PHPUnit\Framework\isEmpty;
 
 class guideController extends Controller
 {
-    public function showGuides()
+    public function showCategories()
     {
-        $guides = repair_guides::all();
+        $categories = categories::all();
+        return view('categories', ['categories' => $categories]);
+    }
+    public function showDevices($id)
+    {
+        $devices = devices::where('fk_categoriesid',$id)->get();
+        return view('devices', ['devices' => $devices]);
+    }
+
+    public function showGuides($id)
+    {
+        $guides = repair_guides::where('fk_devicesid',$id)->get();
         return view('guides', ['guides' => $guides]);
     }
 

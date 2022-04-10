@@ -41,7 +41,10 @@ Route::get('/showOrders', [orderController::class, 'showOrders']);
 Route::get('/changeStatus/{id}/{status}', [orderController::class, 'changeStatus']);
 Route::get('/cancelOrder/{id}', [orderController::class, 'cancelOrder']);
 
-Route::get('/guides', [guideController::class, 'showGuides']);
+Route::get('/categories', [guideController::class, 'showCategories']);
+Route::get('/devices/{id}', [guideController::class, 'showDevices']);
+
+Route::get('/guides/{id}', [guideController::class, 'showGuides']);
 Route::get('/showGuide/{id}', [guideController::class, 'showGuide']);
 Route::get('/addGuide', [guideController::class, 'showAddGuide']);
 Route::post('/addGuide', [guideController::class, 'addGuide']);
