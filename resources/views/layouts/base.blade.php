@@ -2,7 +2,7 @@
 <html lang="lt">
 <title></title>
 <meta charset="utf-8"/>
-<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <style>
     *::-webkit-scrollbar {
         display: none;
