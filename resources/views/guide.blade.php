@@ -23,11 +23,11 @@
                     @foreach($guide as $item)
                         <div class="flex flex-col md:flex-row">
                             <div class="w-full md:w-6/12 mt-4 md:mt-0 md:ml-4">
-                                <h2 class="text-lg font-semibold leading-tight font-bold text-indigo-600">{{$item->step_number}}. {{$item->title}}</h2>
+                                <h2 class="text-lg leading-tight font-bold text-indigo-600">{{$item->step_number}}. {{$item->title}}</h2>
                                 <p class="leading-normal pt-2">{{$item->description}}</p>
 
                             </div>
-                            <div class="w-full md:w-6/12 rounded overflow-hidden">
+                            <div class="w-full md:w-6/12 rounded overflow-hidden t">
                                 <img class="object w-full h-auto"
                                      src="{{$item->image_url}}" alt="">
                             </div>
