@@ -9,4 +9,9 @@ class repair_guides_parts extends Model
 {
     protected $table = 'repair_guides_parts';
     public $timestamps = false;
+
+    public function repairGuidesPartsToPart()
+    {
+        return $this->belongsTo(parts::class, 'fk_partsid', 'parts_id');
+    }
 }

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\devices;
+use App\Models\parts;
 use App\Models\repair_guides;
+use App\Models\repair_guides_parts;
 use App\Models\steps;
 use Illuminate\Http\Request;
 use function PHPUnit\Framework\isEmpty;
@@ -23,7 +25,8 @@ class guideController extends Controller
 //            return redirect('/guides');
 //        } else {
             $guideInfo = repair_guides::where('repair_guides_id', $id)->first();
-            return view('guide', ['guide' => $guide, 'guideInfo' => $guideInfo]);
+            $partsInfo = repair_guides_parts::where('fk_repair_guidesid',$id)->get();
+            return view('guide', ['guide' => $guide, 'guideInfo' => $guideInfo,'partsInfo' => $partsInfo]);
 
 
     }
