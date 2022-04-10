@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\news;
 
 class MainController extends Controller
 {
     public function showMain()
     {
-        return view('main');
+        $data = news::select('*')->orderBy('date', 'desc')->limit(6)->get();
+        return view('main', ['data' => $data]);
     }
 
     public function showFixers()
