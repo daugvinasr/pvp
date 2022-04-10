@@ -21,6 +21,8 @@ use App\Http\Controllers\guideController;
 */
 
 Route::get('/', [MainController::class, 'showMain']);
+Route::get('/showArticle/{id}', [MainController::class, 'showArticle']);
+
 Route::get('/readguide', [MainController::class, 'showReadGuide']);
 Route::get('/fixers', [repairmanController::class, 'showFixers']);
 

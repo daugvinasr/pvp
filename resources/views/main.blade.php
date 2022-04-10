@@ -12,7 +12,7 @@
                                 <p class="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">{{$data[0]->date}}</p>
                                 <div class="absolute bottom-0 left-0 p-6">
                                     <h2 class="text-xl font-semibold 5 text-white">{{$data[0]->title}}</h2>
-                                    <a href="javascript:void(0)"
+                                    <a href="showArticle/{{$data[0]->news_id}}"
                                        class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
                                         <p class="pr-2 text-sm font-medium leading-none">Skaityti</p>
                                         <svg class="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -30,7 +30,7 @@
                                 <p class="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">{{$data[1]->date}}</p>
                                 <div class="absolute bottom-0 left-0 p-6">
                                     <h2 class="text-xl font-semibold 5 text-white">{{$data[1]->title}}</h2>
-                                    <a href="javascript:void(0)"
+                                    <a href="showArticle/{{$data[1]->news_id}}"
                                        class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
                                         <p class="pr-2 text-sm font-medium leading-none">Skaityti</p>
                                         <svg class="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -49,7 +49,7 @@
                             <p class="md:p-10 p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">{{$data[2]->date}}</p>
                             <div class="absolute bottom-0 left-0 md:p-10 p-6">
                                 <h2 class="text-xl font-semibold 5 text-white">{{$data[2]->title}}</h2>
-                                <a href="javascript:void(0)"
+                                <a href="showArticle/{{$data[2]->news_id}}"
                                    class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
                                     <p class="pr-2 text-sm font-medium leading-none">Skaityti</p>
                                     <svg class="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -72,7 +72,7 @@
                             <p class="md:p-10 p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">{{$data[3]->date}}</p>
                             <div class="absolute bottom-0 left-0 md:p-10 p-6">
                                 <h2 class="text-xl font-semibold 5 text-white">{{$data[3]->title}}</h2>
-                                <a href="javascript:void(0)"
+                                <a href="showArticle/{{$data[3]->news_id}}"
                                    class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
                                     <p class="pr-2 text-sm font-medium leading-none">Skaityti</p>
                                     <svg class="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -94,7 +94,7 @@
                                 <p class="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">{{$data[4]->date}}</p>
                                 <div class="absolute bottom-0 left-0 p-6">
                                     <h2 class="text-xl font-semibold 5 text-white">{{$data[4]->title}}</h2>
-                                    <a href="javascript:void(0)"
+                                    <a href="showArticle/{{$data[4]->news_id}}"
                                        class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
                                         <p class="pr-2 text-sm font-medium leading-none">Skaityti</p>
                                         <svg class="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -112,7 +112,7 @@
                                 <p class="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">{{$data[5]->date}}</p>
                                 <div class="absolute bottom-0 left-0 p-6">
                                     <h2 class="text-xl font-semibold 5 text-white">{{$data[5]->title}}</h2>
-                                    <a href="javascript:void(0)"
+                                    <a href="showArticle/{{$data[5]->news_id}}"
                                        class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
                                         <p class="pr-2 text-sm font-medium leading-none">Skaityti</p>
                                         <svg class="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none"

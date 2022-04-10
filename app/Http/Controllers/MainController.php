@@ -12,6 +12,12 @@ class MainController extends Controller
         return view('main', ['data' => $data]);
     }
 
+    public function showArticle($id)
+    {
+        $data = news::select('*')->where('news_id', $id)->first();
+        return view('showArticle', ['data' => $data]);
+    }
+
     public function showFixers()
     {
         return view('fixers');
