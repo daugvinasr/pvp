@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\partsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\AuthController;
@@ -29,7 +30,6 @@ Route::get('/fixers', [repairmanController::class, 'showFixers']);
 Route::get('/addFixer', [repairmanController::class, 'showAddFixer']);
 Route::post('/addFixer', [repairmanController::class, 'addFixer']);
 
-
 Route::get('/locations', [MainController::class, 'showLocations']);
 Route::get('/login', [AuthController::class, 'showLogin']);
 Route::post('/login', [AuthController::class, 'signIn']);
@@ -52,6 +52,9 @@ Route::get('/addStep/{id}', [guideController::class, 'showAddStep']);
 Route::post('/addStep/{id}', [guideController::class, 'addStep']);
 
 Route::get('/profile/{id}', [profileController::class, 'showProfile']);
+
+Route::get('/showParts', [partsController::class, 'showParts']);
+Route::get('/showTools', [partsController::class, 'showTools']);
 
 
 
