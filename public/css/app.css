@@ -651,6 +651,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-16 {
   height: 4rem;
 }
+.h-\[140px\] {
+  height: 140px;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -698,14 +701,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-auto {
   width: auto;
 }
+.w-\[140px\] {
+  width: 140px;
+}
 .max-w-5xl {
   max-width: 64rem;
 }
 .max-w-6xl {
   max-width: 72rem;
-}
-.max-w-full {
-  max-width: 100%;
 }
 .flex-shrink-0 {
   flex-shrink: 0;
