@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="lt">
-<title></title>
+<title>Pavadinimas - Taisymo Gidai</title>
 <meta charset="utf-8"/>
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <style>
@@ -30,9 +30,22 @@
                     <div class="hidden md:flex justify-around space-x-4">
                         <a href="/locations" class="hover:text-indigo-600 text-gray-700">Utilizavimo vietos</a>
                     </div>
+                    @if(session('role') == 'user' && session('id_repairman') == null)
+                        <div class="hidden md:flex justify-around space-x-4">
+                            <a href="/showOrders" class="hover:text-indigo-600 text-gray-700">Jūsų užsakymai</a>
+                        </div>
+                    @elseif(session('role') == 'admin')
+                        <div class="hidden md:flex justify-around space-x-4">
+                            <a href="/showOrders" class="hover:text-indigo-600 text-gray-700">Visi užsakymai</a>
+                        </div>
+                    @elseif(session('id_repairman') != null)
+                        <div class="hidden md:flex justify-around space-x-4">
+                            <a href="/showOrders" class="hover:text-indigo-600 text-gray-700">Jūsų remontai</a>
+                        </div>
+                    @endif
                 </div>
                 <div class="flex space-x-4 items-center">
-                    @if(session('id_user')==null)
+                    @if(session('id_user') == null)
                         <a href="/login" class="text-gray-800 text-sm">Prisijungti</a>
                         <a href="/register"
                            class="bg-indigo-600 px-4 py-2 rounded text-white hover:bg-indigo-500 text-sm">Registruotis</a>
@@ -57,7 +70,7 @@
                 <a href="/"><h1 class="text-xl lg:text-2xl font-bold cursor-pointer">Pavadinimas</h1></a>
             </div>
             <p class="text-sm leading-none text-gray-800 mt-4 ">Copyright © 2022 Pavadinimas</p>
-            <p class="text-sm leading-none text-gray-800 mt-4 ">All rights reserved</p>
+            <p class="text-sm leading-none text-gray-800 mt-4 ">Visos teisės saugomos.</p>
             <div class="flex items-center gap-x-4 mt-12">
                 <button aria-label="instagram"
                         class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 opacity-50 w-8 h-8 flex-shrink-0 bg-gray-800 cursor-pointer hover:bg-gray-700 rounded-full flex items-center justify-center">
@@ -94,41 +107,33 @@
             </div>
         </div>
         <div class="sm:ml-0 ml-8 flex flex-col">
-            <h2 class="text-base font-semibold leading-4 text-gray-800 ">Company</h2>
+            <h2 class="text-base font-semibold leading-4 text-gray-800 ">Pavadinimas</h2>
             <a href="javascript:void(0)"
-               class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800  cursor-pointer">Blog</a>
+               class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800  cursor-pointer">Naujienos</a>
             <a href="javascript:void(0)"
-               class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800  cursor-pointer">Pricing</a>
+               class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800  cursor-pointer">Kainos</a>
             <a href="javascript:void(0)"
-               class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800  cursor-pointer">About
-                Us</a>
+               class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800  cursor-pointer">Apie mus</a>
             <a href="javascript:void(0)"
-               class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800  cursor-pointer">Contact
-                us</a>
+               class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800  cursor-pointer">Susisiekite su mumis</a>
             <a href="javascript:void(0)"
-               class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800  cursor-pointer">Testimonials</a>
+               class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800  cursor-pointer">Atsiliepimai</a>
         </div>
         <div class="flex flex-col">
-            <h2 class="text-base font-semibold leading-4 text-gray-800 ">Support</h2>
+            <h2 class="text-base font-semibold leading-4 text-gray-800 ">Pagalba</h2>
             <a href="javascript:void(0)"
-               class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800  cursor-pointer">Legal
-                policy</a>
+               class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800  cursor-pointer">Teisinė politika</a>
             <a href="javascript:void(0)"
-               class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800  cursor-pointer">Status
-                policy</a>
+               class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800  cursor-pointer">Privatumo politika</a>
             <a href="javascript:void(0)"
-               class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800  cursor-pointer">Privacy
-                policy</a>
-            <a href="javascript:void(0)"
-               class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800  cursor-pointer">Terms
-                of service</a>
+               class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800  cursor-pointer">Paslaugų teikimo sąlygos</a>
         </div>
         <div class="mt-10 lg:block hidden">
-            <label class="text-xl font-medium leading-5 text-gray-800 ">Get updates</label>
+            <label class="text-xl font-medium leading-5 text-gray-800 ">Gauti naujienlaiškį</label>
             <div class="cursor-pointer flex items-center justify-between border border-gray-800 mt-4">
                 <input type="text"
                        class="text-base leading-4 p-4 w-full focus:outline-none text-gray-800 placeholder-gray-800"
-                       placeholder="Enter your email"/>
+                       placeholder="Įveskite savo el. paštą"/>
                 <button aria-label="send"
                         class="mr-4 fill-current text-gray-800 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">
                     <svg  width="16" height="17" viewBox="0 0 16 17"
@@ -142,11 +147,11 @@
         </div>
     </div>
     <div class="mt-10 lg:hidden">
-        <label class="text-xl font-medium leading-5 text-gray-800 ">Get updates</label>
+        <label class="text-xl font-medium leading-5 text-gray-800 ">Gauti naujienlaiškį</label>
         <div class="flex items-center justify-between border border-gray-800  mt-4">
             <input type="text"
                    class="text-base leading-4 p-4 relative z-0 w-full focus:outline-none text-gray-800 placeholder-gray-800"
-                   placeholder="Enter your email"/>
+                   placeholder="Įveskite savo el. paštą"/>
             <button aria-label="send"
                     class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer mr-4 cursor-pointer relative z-40">
                 <svg class="fill-current text-gray-800 hover:text-gray-500 "

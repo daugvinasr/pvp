@@ -38,6 +38,8 @@ Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/register', [AuthController::class, 'showRegister']);
 
 Route::get('/showOrders', [orderController::class, 'showOrders']);
+Route::get('/addOrder/{id}', [orderController::class, 'showAddOrder']);
+Route::post('/addOrder/{id}', [orderController::class, 'addOrder']);
 Route::get('/changeStatus/{id}/{status}', [orderController::class, 'changeStatus']);
 Route::get('/cancelOrder/{id}', [orderController::class, 'cancelOrder']);
 

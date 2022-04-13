@@ -42,6 +42,7 @@ class AuthController extends Controller
 //                error_log($data[0]->role);
                 Session::put('id_user', $data[0]->users_id);
                 Session::put('username', $data[0]->username);
+                Session::put('email', $data[0]->email); // užsakymo pridėjime (geriau jau session laikysiu daugiau nei reikia info nei iš naujo queryinsiu db)
                 Session::put('role', $data[0]->role);
 
 
