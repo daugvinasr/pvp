@@ -58,17 +58,6 @@
                             @enderror
                         </div>
 
-                <div class="mb-6">
-                    <label for="fk_devicesid" class="block text-gray-800 font-bold">Įrenginys:</label>
-                    <select name="fk_devicesid" id="fk_devicesid" class="text-gray-800 border-solid border-2 border-slate-400">
-                        @foreach($devicesData as $device)
-                        <option value="{{$device->devices_id}}">{{$device->name}}</option>
-                            @endforeach
-                    </select>
-                    @error('fk_devicesid')
-                    {{ $message }}
-                    @enderror
-                </div>
                 <button class="cursor-pointer py-2 px-4 block mt-6 bg-indigo-500 text-white font-bold w-full text-center rounded " type="submit">Sukurti gidą</button>
             </form>
         </div>

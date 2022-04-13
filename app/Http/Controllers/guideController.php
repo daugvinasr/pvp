@@ -27,7 +27,8 @@ class guideController extends Controller
     public function showGuides($id)
     {
         $guides = repair_guides::where('fk_devicesid',$id)->get();
-        return view('guides', ['guides' => $guides]);
+        $temp=$id;
+        return view('guides', ['guides' => $guides],['temp' => $temp]);
     }
 
     public function showGuide($id)
@@ -44,19 +45,17 @@ class guideController extends Controller
     }
 
     public function showAddGuide(){
-        $devicesData = devices::all();
-        return view('/addGuide', ['devicesData' => $devicesData]);
+        return view('/addGuide');
     }
 
-    public function addGuide()
+    public function addGuide($id)
     {
         request()->validate([
             'title' => 'required',
             'time_required' => 'required',
             'difficulty' => 'required',
             'description' => 'required',
-            'image_url' => 'required',
-            'fk_devicesid' => 'required'
+            'image_url' => 'required'
         ]);
             $guide = new repair_guides();
             $guide->title = request('title');
@@ -64,7 +63,7 @@ class guideController extends Controller
             $guide->time_required = request('time_required');
             $guide->description = request('description');
             $guide->image_url = request('image_url');
-            $guide->fk_devicesid = request('fk_devicesid');
+            $guide->fk_devicesid = $id;
             $guide->fk_usersid = session('id_user');
             $guide->save();
 
@@ -82,13 +81,16 @@ class guideController extends Controller
             'description' => 'required',
             'image_url' => 'required'
         ]);
-        $number = steps::select('*')->where([['fk_repair_guidesid', '=', $id]])->orderBy('step_number', 'desc')->first();
+        $number = steps::select('step_number')->where([['fk_repair_guidesid', '=', $id]])->orderBy('step_number', 'desc')->first();
+        if(isEmpty($number)){
+            $number = 0;
+        }
 
         $step = new steps();
         $step->title = request('title');
         $step->description = request('description');
         $step->image_url = request('image_url');
-        $step->step_number = $number->step_number+1;
+        $step->step_number = $number+1;
         $step->fk_repair_guidesid=$id;
         $step->save();
 

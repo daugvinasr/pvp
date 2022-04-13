@@ -48,8 +48,8 @@ Route::get('/devices/{id}', [guideController::class, 'showDevices']);
 
 Route::get('/guides/{id}', [guideController::class, 'showGuides']);
 Route::get('/showGuide/{id}', [guideController::class, 'showGuide']);
-Route::get('/addGuide', [guideController::class, 'showAddGuide']);
-Route::post('/addGuide', [guideController::class, 'addGuide']);
+Route::get('/addGuide/{id}', [guideController::class, 'showAddGuide']);
+Route::post('/addGuide/{id}', [guideController::class, 'addGuide']);
 Route::get('/addStep/{id}', [guideController::class, 'showAddStep']);
 Route::post('/addStep/{id}', [guideController::class, 'addStep']);
 
