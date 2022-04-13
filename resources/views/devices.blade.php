@@ -1,7 +1,7 @@
 @extends('layouts.base')
 @section('content')
     <section class="container mx-auto p-6 rounded-10">
-        <h2 class="md:text-3xl font-bold text-center text-gray-500">Pasirinkite prietaisą<br></h2>
+        <h2 class="md:text-3xl font-bold text-center text-gray-500 mb-8">Pasirinkite prietaisą<br></h2>
         <div class="flex items-center justify-center">
             <div class="grid grid-cols-6 gap-2 px-16 ">
                 @foreach($devices as $device)

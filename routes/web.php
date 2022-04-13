@@ -8,6 +8,7 @@ use App\Http\Controllers\repairmanController;
 use App\Http\Controllers\profileController;
 use App\Http\Controllers\orderController;
 use App\Http\Controllers\guideController;
+use App\Http\Controllers\disposalsController;
 
 
 /*
@@ -30,7 +31,7 @@ Route::get('/fixers', [repairmanController::class, 'showFixers']);
 Route::get('/addFixer', [repairmanController::class, 'showAddFixer']);
 Route::post('/addFixer', [repairmanController::class, 'addFixer']);
 
-Route::get('/locations', [MainController::class, 'showLocations']);
+Route::get('/locations', [disposalsController::class, 'showDisposals']);
 Route::get('/login', [AuthController::class, 'showLogin']);
 Route::post('/login', [AuthController::class, 'signIn']);
 Route::post('/register', [AuthController::class, 'addUser']);
