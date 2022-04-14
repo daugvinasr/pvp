@@ -4,7 +4,8 @@
         <!-- Remove py-8 -->
         @if(session('role')=="admin")
             <div class="ml-2 mt-6">
-                <a href="/addGuide/{{$temp}}" class="bg-indigo-600 px-8 py-2 rounded text-white hover:bg-indigo-500 text-sm">Sukurti gidą</a>
+                <a href="/addGuide/{{$temp}}"
+                   class="bg-indigo-600 px-8 py-2 rounded text-white hover:bg-indigo-500 text-sm">Sukurti gidą</a>
             </div>
         @endif
         <div class="mx-auto container py-8">
@@ -12,13 +13,14 @@
 
                 @foreach($guides as $guide)
                     <div tabindex="0" class="focus:outline-none mx-2 w-72 mb-8">
-                        <div>
-                            <img alt="person capturing an image"
-                                 src="{{$guide->image_url}}" tabindex="0"
-                                 class="focus:outline-none w-full"/>
-                            {{--                            //h-50--}}
-                        </div>
-                        <div class="bg-white">
+
+                        <div class="bg-white ">
+                            <div>
+                                <img alt="person capturing an image"
+                                     src="{{$guide->image_url}}" tabindex="0"
+                                     class="focus:outline-none w-[300px] h-[225px]"/>
+                                {{--                            //h-50--}}
+                            </div>
                             {{--                            <div class="flex items-center justify-between px-4 pt-4">--}}
                             {{--                                                                <div>--}}
                             {{--                                                                    <a href="/readguide">--}}
@@ -49,7 +51,7 @@
                                     {{--                                        dienas</p>--}}
                                 </div>
                                 <p tabindex="0"
-                                   class="focus:outline-none text-xs text-gray-600 mt-2">{{$guide->description}}</p>
+                                   class="focus:outline-none text-xs text-gray-600 mt-2 h-12 ">{{$guide->description}}</p>
                                 {{--                                <div class="flex mt-4">--}}
                                 {{--                                    <div>--}}
                                 {{--                                        <p tabindex="0"--}}
@@ -62,7 +64,7 @@
                                 {{--                                            2</p>--}}
                                 {{--                                    </div>--}}
                                 {{--                                </div>--}}
-                                <div class="flex items-center justify-center py-4">
+                                <div class="flex items-center justify-center py-2">
                                     {{--                                    <h2 tabindex="0" class="focus:outline-none text-indigo-700 text-xs font-semibold">--}}
                                     {{--                                        Išlaidos</h2>--}}
                                     <a href="/showGuide/{{$guide->repair_guides_id}}" tabindex="0"
