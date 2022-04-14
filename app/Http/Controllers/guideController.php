@@ -82,7 +82,7 @@ class guideController extends Controller
             'image_url' => 'required'
         ]);
         $number = steps::select('step_number')->where([['fk_repair_guidesid', '=', $id]])->orderBy('step_number', 'desc')->first();
-        if(isEmpty($number)){
+        if($number == null){
             $number = 0;
         }
 
@@ -90,7 +90,7 @@ class guideController extends Controller
         $step->title = request('title');
         $step->description = request('description');
         $step->image_url = request('image_url');
-        $step->step_number = $number+1;
+        $step->step_number = $number->step_number+1;
         $step->fk_repair_guidesid=$id;
         $step->save();
 
