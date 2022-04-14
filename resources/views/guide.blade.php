@@ -10,7 +10,7 @@
                 <h3 class="md:text-lg text-xl text-gray-800 ">Reikalingi įrankiai ir dalys:</h3>
                 <div class="mb-4">
                 @foreach($partsInfo as $part)
-                    <p class=" text-gray-700">{{$part->repairGuidesPartsToPart->name}} </p>
+                    <a href="{{$part->repairGuidesPartsToPart->url}}" class="text-indigo-700">{{$part->repairGuidesPartsToPart->name}} </a><br>
                 @endforeach
                 </div>
                 @if(session('role')=="admin")

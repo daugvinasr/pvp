@@ -10,13 +10,8 @@ class partsController extends Controller
     public function showParts()
     {
         $parts = parts::where('type', 'part')->get();
-        return view('showParts', ['parts' => $parts]);
-    }
-
-    public function showTools()
-    {
-        $parts = parts::where('type', 'tool')->get();
-        return view('showParts', ['parts' => $parts]);
+        $tools = parts::where('type', 'tool')->get();
+        return view('showParts', ['parts' => $parts], ['tools' => $tools]);
     }
 
 }

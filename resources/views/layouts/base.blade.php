@@ -30,6 +30,9 @@
                     <div class="hidden md:flex justify-around space-x-4">
                         <a href="/locations" class="hover:text-indigo-600 text-gray-700">Utilizavimo vietos</a>
                     </div>
+                    <div class="hidden md:flex justify-around space-x-4">
+                        <a href="/showParts" class="hover:text-indigo-600 text-gray-700">Įrankiai ir dalys</a>
+                    </div>
                     @if(session('role') == 'user' && session('id_repairman') == null)
                         <div class="hidden md:flex justify-around space-x-4">
                             <a href="/showOrders" class="hover:text-indigo-600 text-gray-700">Jūsų užsakymai</a>

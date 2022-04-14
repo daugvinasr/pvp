@@ -57,7 +57,6 @@ Route::post('/addStep/{id}', [guideController::class, 'addStep']);
 Route::get('/profile/{id}', [profileController::class, 'showProfile']);
 
 Route::get('/showParts', [partsController::class, 'showParts']);
-Route::get('/showTools', [partsController::class, 'showTools']);
 
 
 
