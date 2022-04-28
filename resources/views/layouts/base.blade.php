@@ -115,18 +115,16 @@
         </div>
         <div class="sm:ml-0 ml-8 flex flex-col">
             <h2 class="text-base font-semibold leading-4 text-gray-800 ">Pavadinimas</h2>
-            <a href="javascript:void(0)"
+            <a href="/"
                class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800  cursor-pointer">Naujienos</a>
-            <a href="javascript:void(0)"
-               class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800  cursor-pointer">Kainos</a>
-            <a href="javascript:void(0)"
-               class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800  cursor-pointer">Apie
-                mus</a>
-            <a href="javascript:void(0)"
-               class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800  cursor-pointer">Susisiekite
-                su mumis</a>
-            <a href="javascript:void(0)"
-               class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800  cursor-pointer">Atsiliepimai</a>
+            <a href="/showParts"
+               class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800  cursor-pointer">Dalys ir įrankiai</a>
+            <a href="/categories"
+               class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800  cursor-pointer">Taisymo gidai</a>
+            <a href="/fixers"
+               class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800  cursor-pointer">Taisytojai</a>
+            <a href="/locations"
+               class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800  cursor-pointer">Utilizavimo vietos</a>
         </div>
         <div class="flex flex-col">
             <h2 class="text-base font-semibold leading-4 text-gray-800 ">Pagalba</h2>

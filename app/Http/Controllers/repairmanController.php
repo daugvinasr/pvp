@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\repair_orders;
+use App\Models\repairmans_categories;
 use App\Models\repairmans;
 use Illuminate\Http\Request;
 
