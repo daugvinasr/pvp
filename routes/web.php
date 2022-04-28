@@ -59,6 +59,8 @@ Route::get('/profile/{id}', [profileController::class, 'showProfile']);
 Route::get('/showParts', [partsController::class, 'showParts']);
 Route::get('/addPart', [partsController::class, 'showAddPart']);
 Route::post('/addPart', [partsController::class, 'addPart']);
+Route::get('/editPart/{id}', [partsController::class, 'showEditPart']);
+Route::post('/editPart/{id}', [partsController::class, 'editPart']);
 
 
 
