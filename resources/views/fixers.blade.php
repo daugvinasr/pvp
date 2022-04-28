@@ -32,7 +32,7 @@
                                 <div class="px-6 mt-16">
                                     <h1 class="font-bold text-3xl text-center mb-1">{{$data -> name}} {{$data -> surname}}</h1>
                                     @foreach($data -> repairmansToCategories as $test)
-                                        <p class="text-gray-800 text-sm text-center">{{$test->repairmancategoriesToCategories->name}}</p>
+                                        <p class="text-gray-800 text-sm text-center bg-indigo-100 rounded-full mb-1">{{$test->repairmancategoriesToCategories->name}}</p>
                                     @endforeach
                                     <p class="text-center text-gray-600 text-base pt-3 font-normal">{{$data -> description}}</p>
                                     <!-- todo taisytojo kategorijas rodyt -->
