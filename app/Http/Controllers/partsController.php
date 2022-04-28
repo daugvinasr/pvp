@@ -14,4 +14,27 @@ class partsController extends Controller
         return view('showParts', ['parts' => $parts], ['tools' => $tools]);
     }
 
+    public function showAddPart()
+    {
+        return view('addPart');
+    }
+
+    public function addPart()
+    {
+        request()->validate([
+            'title' => 'required',
+            'photoUrl' => 'URL',
+            'url' => 'URL',
+            'type' => 'required',
+        ]);
+
+        $part = new parts();
+        $part->name = request('title');
+        $part->url = request('url');
+        $part->picture = request('photoUrl');
+        $part->type = request('type');
+        $part->save();
+        return redirect('showParts');
+    }
+
 }
