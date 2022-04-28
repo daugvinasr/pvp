@@ -70,10 +70,16 @@
                                 </div>
                                 {{--                                <p tabindex="0"--}}
                                 {{--                                   class="focus:outline-none text-xs text-gray-600 mt-2">bbbbbb</p>--}}
-                                <div class="flex items-center justify-center py-4">
+                                <div class="flex items-center justify-center py-2">
                                     <a href="{{$tool->url}}" tabindex="0"
                                        class="focus:outline-none text-indigo-700 text-xl font-semibold">Pirkti</a>
                                 </div>
+                                @if(session('role') == 'admin')
+                                    <div class="flex items-center justify-center">
+                                        <a href="editPart/{{$tool->parts_id}}" tabindex="0"
+                                           class="focus:outline-none text-indigo-700 text-xl font-semibold">Redaguoti</a>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     </div>

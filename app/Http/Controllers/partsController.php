@@ -45,17 +45,19 @@ class partsController extends Controller
 
     public function editPart($id)
     {
-        request()->validate([
-            'title' => 'required',
-            'photoUrl' => 'URL',
-            'url' => 'URL',
-            'type' => 'required',
-        ]);
+//        request()->validate([
+//            'title' => 'required',
+//            'photoUrl' => 'URL',
+//            'url' => 'URL',
+//            'type' => 'required',
+//        ]);
+
 
         $part = parts::where('parts_id', $id);
         $part->update(['name' => request('title')]);
         $part->update(['url' => request('url')]);
         $part->update(['picture' => request('photoUrl')]);
+        $part->update(['type' => request('type')]);
         return redirect('showParts');
     }
 
