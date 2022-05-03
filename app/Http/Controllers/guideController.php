@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\categories;
+use App\Models\comments;
 use App\Models\devices;
 use App\Models\parts;
 use App\Models\repair_guides;
@@ -18,17 +19,18 @@ class guideController extends Controller
         $categories = categories::all();
         return view('categories', ['categories' => $categories]);
     }
+
     public function showDevices($id)
     {
-        $devices = devices::where('fk_categoriesid',$id)->get();
+        $devices = devices::where('fk_categoriesid', $id)->get();
         return view('devices', ['devices' => $devices]);
     }
 
     public function showGuides($id)
     {
-        $guides = repair_guides::where('fk_devicesid',$id)->get();
-        $temp=$id;
-        return view('guides', ['guides' => $guides],['temp' => $temp]);
+        $guides = repair_guides::where('fk_devicesid', $id)->get();
+        $temp = $id;
+        return view('guides', ['guides' => $guides], ['temp' => $temp]);
     }
 
     public function showGuide($id)
@@ -37,14 +39,16 @@ class guideController extends Controller
 //        if ($guide->isEmpty()) {
 //            return redirect('/guides');
 //        } else {
-            $guideInfo = repair_guides::where('repair_guides_id', $id)->first();
-            $partsInfo = repair_guides_parts::where('fk_repair_guidesid',$id)->get();
-            return view('guide', ['guide' => $guide, 'guideInfo' => $guideInfo,'partsInfo' => $partsInfo]);
+        $commentsAmount = comments::where('fk_repair_guidesid', $id)->count();
+        $guideInfo = repair_guides::where('repair_guides_id', $id)->first();
+        $partsInfo = repair_guides_parts::where('fk_repair_guidesid', $id)->get();
+        return view('guide', ['guide' => $guide, 'guideInfo' => $guideInfo, 'partsInfo' => $partsInfo], ['id' => $id, 'commentsAmount' => $commentsAmount]);
 
 
     }
 
-    public function showAddGuide(){
+    public function showAddGuide()
+    {
         return view('/addGuide');
     }
 
@@ -57,20 +61,21 @@ class guideController extends Controller
             'description' => 'required',
             'image_url' => 'required'
         ]);
-            $guide = new repair_guides();
-            $guide->title = request('title');
-            $guide->difficulty = request('difficulty');
-            $guide->time_required = request('time_required');
-            $guide->description = request('description');
-            $guide->image_url = request('image_url');
-            $guide->fk_devicesid = $id;
-            $guide->fk_usersid = session('id_user');
-            $guide->save();
+        $guide = new repair_guides();
+        $guide->title = request('title');
+        $guide->difficulty = request('difficulty');
+        $guide->time_required = request('time_required');
+        $guide->description = request('description');
+        $guide->image_url = request('image_url');
+        $guide->fk_devicesid = $id;
+        $guide->fk_usersid = session('id_user');
+        $guide->save();
 
-            return redirect('/showGuide/'.$guide->id);
+        return redirect('/showGuide/' . $guide->id);
     }
 
-    public function showAddStep(){
+    public function showAddStep()
+    {
         return view('/addStep');
     }
 
@@ -82,7 +87,7 @@ class guideController extends Controller
             'image_url' => 'required'
         ]);
         $number = steps::select('step_number')->where([['fk_repair_guidesid', '=', $id]])->orderBy('step_number', 'desc')->first();
-        if($number == null){
+        if ($number == null) {
             $number = 0;
         }
 
@@ -90,10 +95,10 @@ class guideController extends Controller
         $step->title = request('title');
         $step->description = request('description');
         $step->image_url = request('image_url');
-        $step->step_number = $number->step_number+1;
-        $step->fk_repair_guidesid=$id;
+        $step->step_number = $number->step_number + 1;
+        $step->fk_repair_guidesid = $id;
         $step->save();
 
-        return redirect('/showGuide/'.$id);
+        return redirect('/showGuide/' . $id);
     }
 }

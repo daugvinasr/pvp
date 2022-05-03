@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\commentsController;
 use App\Http\Controllers\partsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
@@ -62,6 +63,10 @@ Route::get('/addPart', [partsController::class, 'showAddPart']);
 Route::post('/addPart', [partsController::class, 'addPart']);
 Route::get('/editPart/{id}', [partsController::class, 'showEditPart']);
 Route::post('/editPart/{id}', [partsController::class, 'editPart']);
+
+Route::get('/showComments/{id}', [commentsController::class, 'showComments']);
+Route::post('/showComments/{id}', [commentsController::class, 'addComment']);
+
 
 
 
