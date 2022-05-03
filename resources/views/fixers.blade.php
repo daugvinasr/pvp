@@ -48,6 +48,11 @@
                                             </div>
                                         </a>
                                     </div>
+                                    <a href="/fixerProfile/{{$data -> repairmans_id}}">
+                                        <button class="hover:text-gray-200 py-2 px-4 block bg-indigo-500
+                                text-white font-bold w-full text-center rounded" type="submit">Plačiau
+                                        </button>
+                                    </a>
                                     @if(session('id_repairman') == null && session('id_user') != null)
                                         <a href="/addOrder/{{$data -> repairmans_id}}">
                                             <button class="hover:text-gray-200 py-2 px-4 block bg-indigo-500

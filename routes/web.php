@@ -26,8 +26,9 @@ Route::get('/', [MainController::class, 'showMain']);
 Route::get('/showArticle/{id}', [MainController::class, 'showArticle']);
 
 Route::get('/readguide', [MainController::class, 'showReadGuide']);
-Route::get('/fixers', [repairmanController::class, 'showFixers']);
 
+Route::get('/fixers', [repairmanController::class, 'showFixers']);
+Route::get('/fixerProfile/{id}', [repairmanController::class, 'showFixerProfile']);
 Route::get('/addFixer', [repairmanController::class, 'showAddFixer']);
 Route::post('/addFixer', [repairmanController::class, 'addFixer']);
 

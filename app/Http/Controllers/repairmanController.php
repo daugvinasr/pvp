@@ -15,6 +15,11 @@ class repairmanController extends Controller
         $fixersData = repairmans::all();
         return view('/fixers', ['fixersData' => $fixersData]);
     }
+    public function showFixerProfile($id)
+    {
+        $fixerData = repairmans::select('*')->where('repairmans_id', $id)->get();
+        return view('/fixerProfile', ['fixerData' => $fixerData]);
+    }
 
     public function showAddFixer()
     {
