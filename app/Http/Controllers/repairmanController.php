@@ -18,7 +18,8 @@ class repairmanController extends Controller
     public function showFixerProfile($id)
     {
         $fixerData = repairmans::select('*')->where('repairmans_id', $id)->get();
-        return view('/fixerProfile', ['fixerData' => $fixerData]);
+        $ordercount = repair_orders::select('*')->where([['fk_repairmansid', $id],['status',3]])->count();
+        return view('/fixerProfile', ['fixerData' => $fixerData, 'ordercount' => $ordercount]);
     }
 
     public function showAddFixer()
