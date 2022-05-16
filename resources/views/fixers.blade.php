@@ -18,7 +18,7 @@
                     patikimai!</p>
             @endif
             <div class="container mx-auto">
-                <div role="list" class="flex items-center xl:justify-between flex-wrap justify-around">
+                <div role="list" class="flex items-center xl:justify-between flex-col justify-around">
                     @foreach($fixersData as $data)
                         <div role="listitem"
                              class="xl:w-5/12 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-1/3 mx-2">
@@ -33,15 +33,15 @@
                                     <h1 class="font-bold text-3xl text-center mb-1 py-2">{{$data -> name}} {{$data -> surname}}</h1>
                                     @foreach($data -> repairmansToCategories as $test)
                                         <div class="py-1">
-                                        <p class="text-gray-800 text-sm text-center bg-indigo-100 rounded-full mb-1 py-1">{{$test->repairmancategoriesToCategories->name}}</p>
+                                            <p class="text-gray-800 text-sm text-center bg-indigo-100 rounded-full mb-1 py-1">{{$test->repairmancategoriesToCategories->name}}</p>
                                         </div>
                                     @endforeach
                                     <div class="pt-2">
-                                    <a href="/fixerProfile/{{$data -> repairmans_id}}">
-                                        <button class="hover:text-gray-200 py-2 px-4 block bg-indigo-500
+                                        <a href="/fixerProfile/{{$data -> repairmans_id}}">
+                                            <button class="hover:text-gray-200 py-2 px-4 block bg-indigo-500
                                 text-white font-bold w-full text-center rounded" type="submit">Plačiau
-                                        </button>
-                                    </a>
+                                            </button>
+                                        </a>
                                     </div>
                                     <br>
                                 </div>
