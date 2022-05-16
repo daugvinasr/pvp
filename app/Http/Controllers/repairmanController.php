@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\categories;
+use App\Models\comments;
+use App\Models\fixer_comments;
 use App\Models\repair_orders;
 use App\Models\repairmans_categories;
 use App\Models\repairmans;
@@ -20,7 +22,9 @@ class repairmanController extends Controller
     {
         $fixerData = repairmans::select('*')->where('repairmans_id', $id)->get();
         $ordercount = repair_orders::select('*')->where([['fk_repairmansid', $id], ['status', 3]])->count();
-        return view('/fixerProfile', ['fixerData' => $fixerData, 'ordercount' => $ordercount]);
+        $commentcount = fixer_comments::select('*')->where([['fk_repairmans_id', $id]])->count();
+
+        return view('/fixerProfile', ['fixerData' => $fixerData, 'ordercount' => $ordercount, 'commentcount' => $commentcount]);
     }
 
     public function showFixerProfileEdit($id)

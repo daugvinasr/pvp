@@ -69,6 +69,10 @@ Route::post('/editPart/{id}', [partsController::class, 'editPart']);
 
 Route::get('/showComments/{id}', [commentsController::class, 'showComments']);
 Route::post('/showComments/{id}', [commentsController::class, 'addComment']);
+Route::get('/showFixerComments/{id}', [commentsController::class, 'showFixerComments']);
+Route::post('/showFixerComments/{id}', [commentsController::class, 'addFixerComment']);
+
+
 
 
 
