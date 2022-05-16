@@ -18,10 +18,10 @@
                     patikimai!</p>
             @endif
             <div class="container mx-auto">
-                <div role="list" class="flex items-center xl:justify-between flex-col justify-around">
+                <div role="list" class="flex flex-col items-center xl:justify-between justify-around">
                     @foreach($fixersData as $data)
                         <div role="listitem"
-                             class="xl:w-5/12 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-1/3 mx-2">
+                             class="xl:w-96 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-1/3 mx-2">
                             <div class="rounded overflow-hidden shadow-md bg-white">
                                 <div class="absolute -mt-20 w-full flex justify-center">
                                     <div class="h-32 w-32">

@@ -23,8 +23,8 @@ class repairmanController extends Controller
         $fixerData = repairmans::select('*')->where('repairmans_id', $id)->get();
         $ordercount = repair_orders::select('*')->where([['fk_repairmansid', $id], ['status', 3]])->count();
         $commentcount = fixer_comments::select('*')->where([['fk_repairmans_id', $id]])->count();
-
-        return view('/fixerProfile', ['fixerData' => $fixerData, 'ordercount' => $ordercount, 'commentcount' => $commentcount]);
+        $rating = fixer_comments::select('rating')->where([['fk_repairmans_id', $id]])->avg('rating');
+        return view('/fixerProfile', ['fixerData' => $fixerData, 'ordercount' => $ordercount, 'commentcount' => $commentcount, 'rating' => floor($rating)]);
     }
 
     public function showFixerProfileEdit($id)

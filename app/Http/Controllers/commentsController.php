@@ -44,6 +44,7 @@ class commentsController extends Controller
         $comment->fk_usersid = session('id_user');
         $comment->timestamp = date('Y-m-d H:i:s');
         $comment->content = request('body');
+        $comment->rating = request('rating');
         $comment->save();
         return redirect('/fixerProfile/' . $id);
     }

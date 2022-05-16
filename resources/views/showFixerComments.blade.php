@@ -16,7 +16,9 @@
                             <div class="p-4 rounded-lg shadow-lg bg-white m-4 w-[700px]">
                                 <div class="flex flex-col">
                                     <p class="text-gray-500 font-medium mb-6 break-words">{{$comment->content}}</p>
-                                    <p class="text-gray-500 text-right">{{$comment->username}} {{$comment->timestamp}}</p>
+                                    <p class="text-gray-500 text-right"> {{$comment->rating}}
+                                        ⭐ {{$comment->username}} {{$comment->timestamp}}</p>
+
                                 </div>
                             </div>
                         </div>
@@ -45,8 +47,20 @@
                                             type="submit">Komentuoti
                                         </button>
                                     </div>
-
+                                    <div class="w-full md:w-full flex items-start flex-row">
+                                        <div>
+                                            <select name="rating" id="type"
+                                                    class="form-select cursor-pointer py-2 px-4 block mt-6 bg-indigo-500 text-white font-bold w-full text-center rounded">
+                                                <option value="1">1 ⭐</option>
+                                                <option value="2">2 ⭐</option>
+                                                <option value="3">3 ⭐</option>
+                                                <option value="4">4 ⭐</option>
+                                                <option value="5">5 ⭐</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
+
                             </div>
                         </form>
                     </div>
