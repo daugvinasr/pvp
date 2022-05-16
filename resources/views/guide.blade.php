@@ -20,6 +20,8 @@
                         <a href="/addStep/{{$guideInfo->repair_guides_id}}"
                            class="bg-indigo-600 px-8 py-2 rounded text-white hover:bg-indigo-500 text-sm">Pridėti
                             žingsnį</a>
+                            <a href="/editGuide/{{$guideInfo->repair_guides_id}}"
+                               class="bg-indigo-600 px-8 py-2 rounded text-white hover:bg-indigo-500 text-sm ml-4">Redaguoti</a>
                     </div>
                 @endif
                 <div class="flex flex-row-reverse">

@@ -49,7 +49,7 @@ class partsController extends Controller
             'title' => 'required',
             'photoUrl' => 'URL',
             'url' => 'URL',
-            'type' => 'required',
+            'type' => 'required'
         ]);
 
 

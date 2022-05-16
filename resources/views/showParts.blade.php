@@ -1,6 +1,10 @@
 @extends('layouts.base')
 @section('content')
     <div class="w-full my-12">
+        <div class="pl-52">
+        <a href="/addPart" class="bg-indigo-600 px-4 py-2 rounded text-white hover:bg-indigo-500">Įrankių ir dalių
+            pridėjimas</a>
+        </div>
         <h2 class="md:text-3xl font-bold text-center text-gray-500">Dalys<br><br></h2>
         <div class="mx-auto container py-8">
 

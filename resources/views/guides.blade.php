@@ -65,8 +65,6 @@
                                 {{--                                    </div>--}}
                                 {{--                                </div>--}}
                                 <div class="flex items-center justify-center py-2">
-                                    {{--                                    <h2 tabindex="0" class="focus:outline-none text-indigo-700 text-xs font-semibold">--}}
-                                    {{--                                        Išlaidos</h2>--}}
                                     <a href="/showGuide/{{$guide->repair_guides_id}}" tabindex="0"
                                        class="focus:outline-none text-indigo-700 text-xl font-semibold">Skaityti</a>
                                 </div>

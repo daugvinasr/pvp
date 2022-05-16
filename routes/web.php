@@ -56,6 +56,8 @@ Route::get('/guides/{id}', [guideController::class, 'showGuides']);
 Route::get('/showGuide/{id}', [guideController::class, 'showGuide']);
 Route::get('/addGuide/{id}', [guideController::class, 'showAddGuide']);
 Route::post('/addGuide/{id}', [guideController::class, 'addGuide']);
+Route::get('/editGuide/{id}', [guideController::class, 'showEditGuide']);
+Route::post('/editGuide/{id}', [guideController::class, 'editGuide']);
 Route::get('/addStep/{id}', [guideController::class, 'showAddStep']);
 Route::post('/addStep/{id}', [guideController::class, 'addStep']);
 

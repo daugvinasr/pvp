@@ -101,4 +101,30 @@ class guideController extends Controller
 
         return redirect('/showGuide/' . $id);
     }
+    public function showEditGuide($id)
+    {
+        $guide = repair_guides::where('repair_guides_id', $id)->first();
+        return view('editGuide', ['guide' => $guide]);
+    }
+
+    public function editGuide($id)
+    {
+        request()->validate([
+            'title' => 'required',
+            'difficulty' => 'required',
+            'image_url' => 'required',
+            'time_required' => 'required',
+            'description' => 'required'
+        ]);
+
+
+        $guide = repair_guides::where('repair_guides_id', $id);
+        $gidas = repair_guides::where('repair_guides_id', $id)->first();
+        $guide->update(['title' => request('title')]);
+        $guide->update(['difficulty' => request('difficulty')]);
+        $guide->update(['time_required' => request('time_required')]);
+        $guide->update(['image_url' => request('image_url')]);
+        $guide->update(['description' => request('description')]);
+        return redirect('/showGuide/' . $gidas->repair_guides_id);
+    }
 }

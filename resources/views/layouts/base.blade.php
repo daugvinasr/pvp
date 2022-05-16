@@ -20,7 +20,7 @@
         <div class="">
             <div class="flex justify-between h-16 px-10 shadow items-center">
                 <div class="flex items-center space-x-8">
-                    <a href="/"><h1 class="text-xl lg:text-2xl font-bold cursor-pointer">Pavadinimas</h1></a>
+                    <a href="/"><img src="https://i.ibb.co/BB57M4y/logo.jpg"></a>
                     <div class="hidden md:flex justify-around space-x-4">
                         <a href="/categories" class="hover:text-indigo-600 text-gray-700">Taisymo gidai</a>
                     </div>
@@ -40,10 +40,6 @@
                     @elseif(session('role') == 'admin')
                         <div class="hidden md:flex justify-around space-x-4">
                             <a href="/showOrders" class="hover:text-indigo-600 text-gray-700">Visi užsakymai</a>
-                        </div>
-                        <div class="hidden md:flex justify-around space-x-4">
-                            <a href="/addPart" class="hover:text-indigo-600 text-gray-700">Įrankių ir dalių
-                                pridėjimas</a>
                         </div>
                     @elseif(session('id_repairman') != null)
                         <div class="hidden md:flex justify-around space-x-4">

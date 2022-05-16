@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <label for="photoUrl" class="block text-gray-800 font-bold">Nuotraukos nuorada:</label>
+                    <label for="photoUrl" class="block text-gray-800 font-bold">Nuotraukos nuoroda:</label>
                     <input name="photoUrl" type="text"
                            class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600"/>
                     @error('photoUrl')
@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <label for="url" class="block text-gray-800 font-bold">Nuorada pirkti:</label>
+                    <label for="url" class="block text-gray-800 font-bold">Nuoroda pirkti:</label>
                     <input name="url" type="text"
                            class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600"/>
                     @error('url')
