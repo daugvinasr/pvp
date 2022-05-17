@@ -39,6 +39,8 @@
                                 <div class="flex flex-row-reverse pr-8 pt-4">
                                 <a href="/editStep/{{$item->step_id}}"
                                    class="bg-indigo-600 px-4 py-1 rounded text-white hover:bg-indigo-500 text-xs ml-4">Redaguoti</a>
+                                    <a href="/removeStep/{{$item->step_id}}"
+                                       class="bg-indigo-600 px-4 py-1 rounded text-white hover:bg-indigo-500 text-xs ml-4">Pašalinti</a>
                                 </div>
                                 @endif
                             </div>

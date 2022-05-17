@@ -64,6 +64,7 @@ Route::get('/addStep/{id}', [guideController::class, 'showAddStep']);
 Route::post('/addStep/{id}', [guideController::class, 'addStep']);
 Route::get('/editStep/{id}', [guideController::class, 'showEditStep']);
 Route::post('/editStep/{id}', [guideController::class, 'editStep']);
+Route::get('/removeStep/{id}', [guideController::class, 'removeStep']);
 
 Route::get('/profile/{id}', [profileController::class, 'showProfile']);
 

@@ -149,4 +149,11 @@ class guideController extends Controller
         $step->update(['description' => request('description')]);
         return redirect('/showGuide/' . $temp->fk_repair_guidesid);
     }
+    public function removeStep($id)
+    {
+        $step = steps::where('step_id', $id);
+        $temp = steps::where('step_id', $id)->first();
+        $step->delete();
+        return redirect('/showGuide/' . $temp->fk_repair_guidesid);
+    }
 }
