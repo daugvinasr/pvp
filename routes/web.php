@@ -31,9 +31,11 @@ Route::get('/readguide', [MainController::class, 'showReadGuide']);
 Route::get('/fixers', [repairmanController::class, 'showFixers']);
 Route::get('/fixerProfile/{id}', [repairmanController::class, 'showFixerProfile']);
 Route::get('/fixerProfileEdit/{id}', [repairmanController::class, 'showFixerProfileEdit']);
+Route::post('/fixerProfileEdit/{id}', [repairmanController::class, 'addEditedFixer']);
+Route::get('/fixerProfileEdit/{id}/approval', [repairmanController::class, 'showFixerApprovalForm']);
+Route::post('/fixerProfileEdit/{id}/approval', [repairmanController::class, 'approveFixer']);
 Route::get('/addFixer', [repairmanController::class, 'showAddFixer']);
 Route::post('/addFixer', [repairmanController::class, 'addFixer']);
-Route::post('/fixerProfileEdit/{id}', [repairmanController::class, 'addEditedFixer']);
 
 
 Route::get('/locations', [disposalsController::class, 'showDisposals']);

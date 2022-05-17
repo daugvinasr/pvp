@@ -20,8 +20,7 @@
         </section>
         <section class="relative py-4 bg-blueGray-200 rounded-b-2xl">
             <div class="container mx-auto px-4">
-                <div
-                    class="relative flex flex-col min-w-0 break-words bg-white w-9/12 mb-6 shadow-xl rounded-lg -mt-96 ml-40">
+                <div class="relative flex flex-col min-w-0 break-words bg-white w-9/12 mb-6 shadow-xl rounded-lg -mt-96 ml-40">
                     <div class="px-6">
                         <div class="flex flex-wrap justify-center">
                             <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
@@ -43,6 +42,8 @@
                                         @include('partials.4star')
                                     @elseif($rating == 5)
                                         @include('partials.5star')
+                                    @else
+                                        @include('partials.0star')
                                     @endif
                                 </div>
                             </div>
@@ -77,9 +78,12 @@
                                 <i class="fa fa-phone mr-2 text-lg text-blueGray-400"></i>{{$fixerData[0]->phone_number}}
                             </div>
                             <div class="mb-2 text-blueGray-600">
-                                <i class="fa fa-check mr-2 text-lg text-green-400"></i>Patvirtintas
+                                @if($fixerData[0]->approved == 0)
+                                    <i class="fa fa-minus mr-2 text-lg"></i>Nepatvirtintas
+                                @elseif($fixerData[0]->approved == 1)
+                                    <i class="fa fa-check mr-2 text-lg text-green-400"></i>Patvirtintas
+                                @endif
                             </div>
-
                         </div>
                         <div class="mt-10 py-10 border-t border-blueGray-200 text-center">
                             <div class="flex flex-wrap justify-center">

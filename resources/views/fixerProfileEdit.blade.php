@@ -54,7 +54,6 @@
                             {{ $message }}
                             @enderror
                         </div>
-
                         <div class="mb-6">
                             <label for="name" class="block text-gray-800 font-bold">Detaliau apie paslaugas:</label>
                             {{--                            <textarea name="description" id="" cols="10" rows="10" class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600 h-24"></textarea>--}}
@@ -72,7 +71,6 @@
                             {{ $message }}
                             @enderror
                         </div>
-
                         <div class="mb-6">
                             <label for="name" class="block text-gray-800 font-bold">Specializacija:</label>
                             <p for="name" class="text-sm text-gray-400">Sužymėkite laikant CTRL</p>
@@ -85,6 +83,16 @@
                             @error('categories_list')
                             {{ $message }}
                             @enderror
+                        </div>
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-800 font-bold">Patvirtintas:</label>
+                            @if($fixerData[0]->approved == 0)
+                                <input disabled type="text" value="Ne" class="w-min border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600">
+                                <br />
+                                <a href="/fixerProfileEdit/{{$fixerData[0] -> repairmans_id}}/approval" class="text-sm text-gray-400"> (Kaip gauti patvirtinimą?)</a>
+                            @elseif($fixerData[0]->approved == 1)
+                                <input disabled type="text" value="Taip" class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600">
+                            @endif
                         </div>
                     </div>
                 </div>

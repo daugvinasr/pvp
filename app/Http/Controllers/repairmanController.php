@@ -34,6 +34,25 @@ class repairmanController extends Controller
         return view('/fixerProfileEdit', ['fixerData' => $fixerData, 'categories' => $categories]);
     }
 
+    public function showFixerApprovalForm($id)
+    {
+        return view('/fixerApprovalForm');
+    }
+
+    public function approveFixer($id)
+    {
+        request()->validate([
+            'address' => 'required',
+            'zipcode' => 'required|digits:5',
+            'idnumber' => 'required|digits:11|starts_with:1,2,3,4,5,6'
+        ]);
+
+        $repairman = repairmans::where('repairmans_id', $id);
+        $repairman->update(['approved' => 1]);
+
+        return redirect("/fixerProfile/$id");
+    }
+
     public function showAddFixer()
     {
         $categories = categories::all();
@@ -80,7 +99,6 @@ class repairmanController extends Controller
 
     public function addFixer()
     {
-
         request()->validate([
             'name' => 'required',
             'surname' => 'required',
@@ -99,7 +117,6 @@ class repairmanController extends Controller
             ->get();
 
         if ($repairmans->isEmpty()) {
-
             $repairman = new repairmans();
             $repairman->name = request('name');
             $repairman->surname = request('surname');
@@ -120,7 +137,7 @@ class repairmanController extends Controller
             }
             return redirect('/');
         } else {
-            return redirect('/addFixer')->with('errormessage', 'Jūs jau turitę tvarkytojo paskyrą!');
+            return redirect('/addFixer')->with('errormessage', 'Jūs jau turite tvarkytojo paskyrą!');
         }
     }
 }
