@@ -5,7 +5,7 @@
         <p class="p-4 text-gray-700 text-center mb-2">Siekdami įsitikinti, kad taisytojai atliktų savo užsakymus
             sąžiningai, suteikiame galimybę kiekvienam taisytojui užpildyti papildomą asmeninės informacijos formą.</p>
         <p class="p-2 text-gray-700 text-center mb-2">TaiSau vos įsitikinus, kad pateikti duomenys teisingi, suteiksime profilio patvirtinimą!</p>
-        <div class="py-6 px-8 h-120 w-min bg-white rounded shadow-xl">
+        <div class="py-6 px-8 h-120 bg-white rounded shadow-xl">
             <form method="POST">
                 @csrf
                 @if (session('errormessage'))
@@ -39,8 +39,10 @@
                     {{ $message }}
                     @enderror
                 </div>
-                <button class="cursor-pointer block bg-indigo-500 text-white font-bold w-full text-center rounded"
-                        type="submit">Pateikti</button>
+                <div class="w-1/2 pt-2 ml-36">
+                <button  class="cursor-pointer py-2 px-4 block mt-6 bg-indigo-500 text-white font-bold w-full text-center rounded "
+                         type="submit">Pateikti</button>
+                </div>
             </div>
             </form>
         </div>

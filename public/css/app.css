@@ -619,6 +619,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .-mt-px {
   margin-top: -1px;
 }
+.ml-20 {
+  margin-left: 5rem;
+}
+.ml-36 {
+  margin-left: 9rem;
+}
 .block {
   display: block;
 }
@@ -739,6 +745,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-auto {
   width: auto;
+}
+.w-1\/4 {
+  width: 25%;
+}
+.w-1\/2 {
+  width: 50%;
 }
 .min-w-0 {
   min-width: 0px;
@@ -1112,6 +1124,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pl-52 {
   padding-left: 13rem;
+}
+.pl-12 {
+  padding-left: 3rem;
 }
 .text-left {
   text-align: left;
