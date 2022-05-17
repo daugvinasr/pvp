@@ -20,7 +20,8 @@
         </section>
         <section class="relative py-4 bg-blueGray-200 rounded-b-2xl">
             <div class="container mx-auto px-4">
-                <div class="relative flex flex-col min-w-0 break-words bg-white w-9/12 mb-6 shadow-xl rounded-lg -mt-96 ml-40">
+                <div
+                    class="relative flex flex-col min-w-0 break-words bg-white w-9/12 mb-6 shadow-xl rounded-lg -mt-96 ml-40">
                     <div class="px-6">
                         <div class="flex flex-wrap justify-center">
                             <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
@@ -58,7 +59,7 @@
                                         <a href="/showFixerComments/{{$fixerData[0]->repairmans_id}}"
                                            class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">{{$commentcount}}</a>
                                         <a href="/showFixerComments/{{$fixerData[0]->repairmans_id}}"
-                                           class="text-sm text-blueGray-400">Komentarai</a>
+                                           class="text-sm text-blueGray-400">Atsiliepimai</a>
                                     </div>
                                 </div>
                             </div>
