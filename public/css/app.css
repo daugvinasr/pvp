@@ -460,6 +460,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pointer-events-none {
   pointer-events: none;
 }
+.static {
+  position: static;
+}
 .fixed {
   position: fixed;
 }
@@ -565,6 +568,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-2 {
   margin-bottom: 0.5rem;
 }
+.ml-36 {
+  margin-left: 9rem;
+}
 .-mt-96 {
   margin-top: -24rem;
 }
@@ -618,12 +624,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .-mt-px {
   margin-top: -1px;
-}
-.ml-20 {
-  margin-left: 5rem;
-}
-.ml-36 {
-  margin-left: 9rem;
 }
 .block {
   display: block;
@@ -705,13 +705,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-\[160px\] {
   width: 160px;
 }
+.w-1\/2 {
+  width: 50%;
+}
+.w-9\/12 {
+  width: 75%;
+}
 .w-min {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-}
-.w-9\/12 {
-  width: 75%;
 }
 .w-11\/12 {
   width: 91.666667%;
@@ -745,12 +748,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-auto {
   width: auto;
-}
-.w-1\/4 {
-  width: 25%;
-}
-.w-1\/2 {
-  width: 50%;
 }
 .min-w-0 {
   min-width: 0px;
@@ -1125,8 +1122,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pl-52 {
   padding-left: 13rem;
 }
-.pl-12 {
-  padding-left: 3rem;
+.pt-24 {
+  padding-top: 6rem;
+}
+.pt-32 {
+  padding-top: 8rem;
+}
+.pr-8 {
+  padding-right: 2rem;
 }
 .text-left {
   text-align: left;

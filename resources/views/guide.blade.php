@@ -35,7 +35,12 @@
                                 <h2 class="text-lg leading-tight font-bold text-indigo-600">{{$item->step_number}}
                                     . {{$item->title}}</h2>
                                 <p class="leading-normal pt-2">{{$item->description}}</p>
-
+                                @if(session('role')=="admin")
+                                <div class="flex flex-row-reverse pr-8 pt-4">
+                                <a href="/editStep/{{$item->step_id}}"
+                                   class="bg-indigo-600 px-4 py-1 rounded text-white hover:bg-indigo-500 text-xs ml-4">Redaguoti</a>
+                                </div>
+                                @endif
                             </div>
                             <div class="w-full md:w-6/12 rounded overflow-hidden t">
                                 <img class="object w-full h-auto"

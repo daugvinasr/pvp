@@ -127,4 +127,25 @@ class guideController extends Controller
         $guide->update(['description' => request('description')]);
         return redirect('/showGuide/' . $gidas->repair_guides_id);
     }
+    public function showEditStep($id)
+    {
+        $step = steps::where('step_id', $id)->first();
+        return view('editStep', ['step' => $step]);
+    }
+
+    public function editStep($id)
+    {
+        request()->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'image_url' => 'required'
+        ]);
+
+        $step = steps::where('step_id', $id);
+        $temp = steps::where('step_id', $id)->first();
+        $step->update(['title' => request('title')]);
+        $step->update(['image_url' => request('image_url')]);
+        $step->update(['description' => request('description')]);
+        return redirect('/showGuide/' . $temp->fk_repair_guidesid);
+    }
 }
