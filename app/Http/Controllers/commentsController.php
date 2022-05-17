@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\comments;
 use App\Models\fixer_comments;
+use App\Models\repair_orders;
 use Illuminate\Http\Request;
 
 class commentsController extends Controller
@@ -31,7 +32,10 @@ class commentsController extends Controller
     public static function showFixerComments($id)
     {
         $comments = fixer_comments::where('fk_repairmans_id', $id)->join('users', 'fk_usersid', '=', 'users_id')->get();
-        return view('showFixerComments', ['comments' => $comments]);
+        $ordersInfo = repair_orders::where([['fk_usersid', session('id_user')], ['fk_repairmansid', $id]])->get();
+
+        return view('showFixerComments', ['comments' => $comments, 'ordersInfo' => $ordersInfo]);
+
     }
 
     public static function addFixerComment($id)

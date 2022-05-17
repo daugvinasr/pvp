@@ -562,6 +562,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-8 {
   margin-bottom: 2rem;
 }
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
 .-mt-96 {
   margin-top: -24rem;
 }
@@ -580,9 +583,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-12 {
   margin-top: 3rem;
 }
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
 .mt-0 {
   margin-top: 0px;
 }
@@ -594,6 +594,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mb-32 {
   margin-bottom: 8rem;
+}
+.ml-4 {
+  margin-left: 1rem;
 }
 .mt-4 {
   margin-top: 1rem;
@@ -607,17 +610,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-64 {
   margin-bottom: 16rem;
 }
-.-mt-2 {
-  margin-top: -0.5rem;
-}
-.ml-16 {
-  margin-left: 4rem;
-}
 .ml-1 {
   margin-left: 0.25rem;
-}
-.ml-4 {
-  margin-left: 1rem;
 }
 .ml-12 {
   margin-left: 3rem;
@@ -704,6 +698,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-\[160px\] {
   width: 160px;
+}
+.w-min {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
 }
 .w-9\/12 {
   width: 75%;
@@ -989,14 +988,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-5 {
   padding: 1.25rem;
 }
+.p-2 {
+  padding: 0.5rem;
+}
 .p-3 {
   padding: 0.75rem;
 }
 .p-8 {
   padding: 2rem;
-}
-.p-2 {
-  padding: 0.5rem;
 }
 .py-6 {
   padding-top: 1.5rem;
@@ -1111,9 +1110,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pb-2 {
   padding-bottom: 0.5rem;
 }
-.pl-40 {
-  padding-left: 10rem;
-}
 .pl-52 {
   padding-left: 13rem;
 }
@@ -1224,13 +1220,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
-.text-green-400 {
-  --tw-text-opacity: 1;
-  color: rgb(74 222 128 / var(--tw-text-opacity));
-}
 .text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+.text-green-400 {
+  --tw-text-opacity: 1;
+  color: rgb(74 222 128 / var(--tw-text-opacity));
 }
 .text-indigo-600 {
   --tw-text-opacity: 1;
@@ -1460,8 +1456,8 @@ Ensure the default browser behavior of the `hidden` attribute.
     border-radius: 0.5rem;
   }
 
-  .sm\:p-6 {
-    padding: 1.5rem;
+  .sm\:p-4 {
+    padding: 1rem;
   }
 
   .sm\:px-6 {
@@ -1626,8 +1622,8 @@ Ensure the default browser behavior of the `hidden` attribute.
     align-self: center;
   }
 
-  .lg\:p-8 {
-    padding: 2rem;
+  .lg\:p-5 {
+    padding: 1.25rem;
   }
 
   .lg\:px-8 {
