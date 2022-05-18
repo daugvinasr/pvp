@@ -10,6 +10,8 @@
                     Prietaiso remonto metu, jo būseną galėsite stebėti
                     <a href="/showOrders" class="hover:text-indigo-600 underline text-gray-700">Jūsų užsakymų</a>
                     skyrelyje!</p>
+                <p class="p-4 text-gray-700 text-justify mb-2">Jei pats/pati užsiimate taisymų ir norite tapti taisytoju:<br>
+                    <a href="/addFixer" class="hover:text-indigo-600 underline text-gray-700">Spauskite čia</a></p>
             @elseif(session('id_repairman') != null)
                 <h2 class="md:text-3xl font-bold text-center text-gray-500">Sveiki, <i>{{session('username')}}</i>.</h2>
                 <p class="p-4 text-gray-700 text-justify mb-2">Žemiau pateikiamas visų remontininkų sąrašas. Naudotojai

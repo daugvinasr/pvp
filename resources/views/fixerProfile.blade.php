@@ -89,7 +89,7 @@
                         <div class="mt-10 py-10 border-t border-blueGray-200 text-center">
                             <div class="flex flex-wrap justify-center">
                                 <div class="w-full lg:w-9/12 px-4">
-                                    <p class="mb-4 text-lg leading-relaxed text-blueGray-700">
+                                    <p class="mb-4 text-lg text-blueGray-700">
                                         {{$fixerData[0]->description}}
                                     </p>
                                     @if(session('id_repairman') == null && session('id_user') != null)

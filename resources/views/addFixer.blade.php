@@ -2,6 +2,7 @@
 @section('content')
     <div class="h-screen bg-gray-100 justify-center">
         <div class="py-6 px-8 h-120 w-max mt-20 bg-white rounded shadow-xl">
+            <h1 class="text-2xl text-gray-800 font-bold mb-5 mx-20">Pateikite savo informaciją:</h1>
             <form method="POST">
                 @csrf
                 @if (session('errormessage'))
@@ -34,9 +35,11 @@
                             @enderror
                         </div>
                         <div class="mb-6">
-                            <label for="name" class="block text-gray-800 font-bold">El. paštas:</label>
-                            <input name="email" type="email"  class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />
-                            @error('email')
+                            <label for="name" class="block text-gray-800 font-bold">Detaliau apie paslaugas:</label>
+                            <textarea name="description" id="" cols="10" rows="10" class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600 h-24"></textarea>
+                            {{--                            <input name="description" type="text"  class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />--}}
+
+                            @error('description')
                             {{ $message }}
                             @enderror
                         </div>
@@ -46,6 +49,21 @@
                             <label for="name" class="block text-gray-800 font-bold">Telefono numeris:</label>
                             <input name="phone_number" type="text"  class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />
                             @error('phone_number')
+                            {{ $message }}
+                            @enderror
+                        </div>
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-800 font-bold">El. paštas:</label>
+                            <input name="email" type="email"  class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />
+                            @error('email')
+                            {{ $message }}
+                            @enderror
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-800 font-bold">Nuotraukos nuorada:</label>
+                            <input name="photo_url" type="url"  class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />
+                            @error('photo_url')
                             {{ $message }}
                             @enderror
                         </div>
@@ -61,25 +79,9 @@
                             {{ $message }}
                             @enderror
                         </div>
-                        <div class="mb-6">
-                            <label for="name" class="block text-gray-800 font-bold">Detaliau apie paslaugas:</label>
-{{--                            <textarea name="description" id="" cols="10" rows="10" class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600 h-24"></textarea>--}}
-                            <input name="description" type="text"  class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />
-
-                            @error('description')
-                            {{ $message }}
-                            @enderror
-                        </div>
-                        <div class="mb-6">
-                            <label for="name" class="block text-gray-800 font-bold">Nuotraukos nuorada:</label>
-                            <input name="photo_url" type="url"  class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />
-                            @error('photo_url')
-                            {{ $message }}
-                            @enderror
-                        </div>
                     </div>
                 </div>
-                <button class="cursor-pointer py-2 px-4 block mt-6 bg-indigo-500 text-white font-bold w-full text-center rounded " type="submit">Pridėti taisytoją</button>
+                <button class="cursor-pointer py-2 px-4 block mt-6 bg-indigo-500 text-white font-bold w-full text-center rounded " type="submit">Registruotis</button>
             </form>
         </div>
     </div>

@@ -5,7 +5,7 @@
             <div class="container mx-auto">
                 <div class="h-full">
                     <div class="border-b-2 block md:flex">
-                        <div class="w-full md:w-2/5 p-3 sm:p-4 lg:p-5 bg-white shadow-md">
+                        <div class="md:w-3/5 p-3 sm:p-4 lg:p-5 bg-white shadow-md">
                             <div class="flex justify-between">
                                 <span class="text-xl mt-4 font-semibold block">Jūsų profilis</span>
                                 <a href="#" class="text-md font-bold text-white bg-indigo-700 rounded-full px-5 py-4 hover:bg-indigo-800">Redaguoti</a>
@@ -17,7 +17,7 @@
                             </div>
                         </div>
 
-                        <div class="w-full md:w-3/5 p-8 bg-white lg:ml-4 shadow-md">
+                        <div class="md:w-full p-8 bg-white lg:ml-4 shadow-md">
                             <div class="rounded shadow p-6">
                                 <div class="pb-6">
                                     <label for="username" class="font-semibold text-gray-700 block pb-1">Prisijungimo vardas:</label>
@@ -31,7 +31,7 @@
                                 </div>
                                 <div class="pb-4">
                                     <label for="role" class="font-semibold text-gray-700 block pb-1">Rolė:</label>
-                                    <input disabled id="role" class="border-1  rounded-r px-4 py-2 w-full" type="text" value="{{$userData -> role == 'user' ? 'Naudotojas' : ($userData->role  == 'admin' ? 'Administatorius' : "Prižiurėtojas")}}" />
+                                    <input disabled id="role" class="border-1  rounded-r px-4 py-2 w-full" type="text" value="{{$userData -> role == 'fixer' ? 'Taisytojas' :($userData -> role == 'user' ? 'Naudotojas' : ($userData->role  == 'admin' ? 'Administatorius' : "Redaktorius"))}}" />
                                 </div>
                             </div>
                         </div>

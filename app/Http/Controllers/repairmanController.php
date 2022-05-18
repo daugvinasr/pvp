@@ -8,6 +8,7 @@ use App\Models\fixer_comments;
 use App\Models\repair_orders;
 use App\Models\repairmans_categories;
 use App\Models\repairmans;
+use App\Models\users;
 use Illuminate\Http\Request;
 
 class repairmanController extends Controller
@@ -126,6 +127,8 @@ class repairmanController extends Controller
             $repairman->description = request('description');
             $repairman->photo_url = request('photo_url');
             $repairman->fk_usersid = session('id_user');
+            $status = users::where('users_id', $repairman->fk_usersid);
+            $status->update(['role' => 'fixer']);
             $repairman->save();
 
             $categoriesArray = request('categories_list');
@@ -135,7 +138,7 @@ class repairmanController extends Controller
                 $repairmans_categories->fk_categoriesid = $category;
                 $repairmans_categories->save();
             }
-            return redirect('/');
+            return redirect('/fixerProfile/' . $repairman->id);
         } else {
             return redirect('/addFixer')->with('errormessage', 'Jūs jau turite tvarkytojo paskyrą!');
         }
