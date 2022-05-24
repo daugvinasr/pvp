@@ -23,14 +23,17 @@ class guideController extends Controller
     public function showDevices($id)
     {
         $devices = devices::where('fk_categoriesid', $id)->get();
-        return view('devices', ['devices' => $devices]);
+        $temp=$id;
+        return view('devices', ['devices' => $devices],['temp' => $temp]);
     }
 
     public function showGuides($id)
     {
         $guides = repair_guides::where('fk_devicesid', $id)->get();
         $temp = $id;
-        return view('guides', ['guides' => $guides], ['temp' => $temp]);
+        $atgal=devices::select('fk_categoriesid')->where('devices_id',$id)->first();
+        $atgal=$atgal->fk_categoriesid;
+        return view('guides', ['guides' => $guides,'temp' => $temp,'atgal'=> $atgal]);
     }
 
     public function showGuide($id)
@@ -155,5 +158,46 @@ class guideController extends Controller
         $temp = steps::where('step_id', $id)->first();
         $step->delete();
         return redirect('/showGuide/' . $temp->fk_repair_guidesid);
+    }
+
+    public function showAddCategories()
+    {
+        return view('/addCategories');
+    }
+
+    public function addCategories()
+    {
+        request()->validate([
+            'name' => 'required',
+            'photo_url' => 'required'
+        ]);
+        $categorie = new categories();
+        $categorie->name = request('name');
+        $categorie->photo_url = request('photo_url');
+        $categorie->save();
+
+        return redirect('/categories');
+    }
+
+    public function showAddDevice()
+    {
+        return view('/addDevice');
+    }
+
+    public function addDevice($id)
+    {
+        request()->validate([
+            'name' => 'required',
+            'specifications' => 'required',
+            'photo_url' => 'required'
+        ]);
+        $device = new devices();
+        $device->name = request('name');
+        $device->specifications = request('specifications');
+        $device->photo_url = request('photo_url');
+        $device->fk_categoriesid  = $id;
+        $device->save();
+
+        return redirect('/devices/' . $id);
     }
 }

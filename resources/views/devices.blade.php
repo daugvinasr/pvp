@@ -1,5 +1,13 @@
 @extends('layouts.base')
 @section('content')
+        <div class="absolute left-72 mt-8">
+            <a href="/categories"
+               class="bg-indigo-600 px-8 py-2 rounded text-white hover:bg-indigo-500 text-sm mr-4">Atgal</a>
+            @if(session('role')=="admin")
+                <a href="/addDevice/{{$temp}}"
+                   class="bg-indigo-600 px-8 py-2 rounded text-white hover:bg-indigo-500 text-sm">Pridėti įrenginį</a>
+            @endif
+    </div>
     <section class="container mx-auto p-6 rounded-10">
         <h2 class="md:text-3xl font-bold text-center text-gray-500 mb-8">Pasirinkite prietaisą<br></h2>
         <div class="flex items-center justify-center">

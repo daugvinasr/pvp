@@ -1,5 +1,11 @@
 @extends('layouts.base')
 @section('content')
+    @if(session('role')=="admin")
+        <div class="absolute left-96 mt-8">
+            <a href="/addCategories"
+               class="bg-indigo-600 px-8 py-2 rounded text-white hover:bg-indigo-500 text-sm">Pridėti kategoriją</a>
+        </div>
+    @endif
     <section class="container mx-auto p-6 rounded-10">
         <h2 class="md:text-3xl font-bold text-center text-gray-500">Pasirinkite kategoriją<br><br></h2>
         <div class="flex items-center justify-center">
