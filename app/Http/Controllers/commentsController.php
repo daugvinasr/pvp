@@ -33,8 +33,7 @@ class commentsController extends Controller
     {
         $comments = fixer_comments::where('fk_repairmans_id', $id)->join('users', 'fk_usersid', '=', 'users_id')->get();
         $ordersInfo = repair_orders::where([['fk_usersid', session('id_user')], ['fk_repairmansid', $id]])->get();
-
-        return view('showFixerComments', ['comments' => $comments, 'ordersInfo' => $ordersInfo]);
+        return view('showFixerComments', ['comments' => $comments, 'ordersInfo' => $ordersInfo, 'id' => $id]);
 
     }
 
@@ -50,7 +49,7 @@ class commentsController extends Controller
         $comment->content = request('body');
         $comment->rating = request('rating');
         $comment->save();
-        return redirect('/fixerProfile/' . $id);
+        return redirect('/showFixerComments/' . $id);
     }
 
 }
