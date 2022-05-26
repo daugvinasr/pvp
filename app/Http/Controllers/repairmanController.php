@@ -10,6 +10,7 @@ use App\Models\repairmans_categories;
 use App\Models\repairmans;
 use App\Models\users;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class repairmanController extends Controller
 {
@@ -138,6 +139,8 @@ class repairmanController extends Controller
                 $repairmans_categories->fk_categoriesid = $category;
                 $repairmans_categories->save();
             }
+
+            Session::put('id_repairman', $repairman->id);
             return redirect('/fixerProfile/' . $repairman->id);
         } else {
             return redirect('/addFixer')->with('errormessage', 'Jūs jau turite tvarkytojo paskyrą!');
