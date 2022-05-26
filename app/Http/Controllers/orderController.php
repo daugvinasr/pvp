@@ -16,7 +16,7 @@ class orderController extends Controller
             $statusData = repair_orders::select('*')
                 ->where([
                     ['fk_repairmansid', '=', session('id_repairman')],
-                    ['status', '<', '3'],
+                    ['status', '<', '4'],
                 ])
                 ->get();
         } else if (session('id_repairman') == null && session('role') == 'user') {
