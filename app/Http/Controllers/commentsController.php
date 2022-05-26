@@ -12,7 +12,7 @@ class commentsController extends Controller
     public static function showComments($id)
     {
         $comments = comments::where('fk_repair_guidesid', $id)->join('users', 'fk_usersid', '=', 'users_id')->get();
-        return view('showComments', ['comments' => $comments]);
+        return view('showComments', ['comments' => $comments], ['id' => $id]);
     }
 
     public static function addComment($id)
@@ -34,7 +34,6 @@ class commentsController extends Controller
         $comments = fixer_comments::where('fk_repairmans_id', $id)->join('users', 'fk_usersid', '=', 'users_id')->get();
         $ordersInfo = repair_orders::where([['fk_usersid', session('id_user')], ['fk_repairmansid', $id]])->get();
         return view('showFixerComments', ['comments' => $comments, 'ordersInfo' => $ordersInfo, 'id' => $id]);
-
     }
 
     public static function addFixerComment($id)

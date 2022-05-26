@@ -20,8 +20,8 @@
                         <a href="/addStep/{{$guideInfo->repair_guides_id}}"
                            class="bg-indigo-600 px-8 py-2 rounded text-white hover:bg-indigo-500 text-sm">Pridėti
                             žingsnį</a>
-                            <a href="/editGuide/{{$guideInfo->repair_guides_id}}"
-                               class="bg-indigo-600 px-8 py-2 rounded text-white hover:bg-indigo-500 text-sm ml-4">Redaguoti</a>
+                        <a href="/editGuide/{{$guideInfo->repair_guides_id}}"
+                           class="bg-indigo-600 px-8 py-2 rounded text-white hover:bg-indigo-500 text-sm ml-4">Redaguoti</a>
                     </div>
                 @endif
                 <div class="flex flex-row-reverse">
@@ -36,12 +36,12 @@
                                     . {{$item->title}}</h2>
                                 <p class="leading-normal pt-2">{{$item->description}}</p>
                                 @if(session('role')=="admin")
-                                <div class="flex flex-row-reverse pr-8 pt-4">
-                                <a href="/editStep/{{$item->step_id}}"
-                                   class="bg-indigo-600 px-4 py-1 rounded text-white hover:bg-indigo-500 text-xs ml-4">Redaguoti</a>
-                                    <a href="/removeStep/{{$item->step_id}}"
-                                       class="bg-indigo-600 px-4 py-1 rounded text-white hover:bg-indigo-500 text-xs ml-4">Pašalinti</a>
-                                </div>
+                                    <div class="flex flex-row-reverse pr-8 pt-4">
+                                        <a href="/editStep/{{$item->step_id}}"
+                                           class="bg-indigo-600 px-4 py-1 rounded text-white hover:bg-indigo-500 text-xs ml-4">Redaguoti</a>
+                                        <a href="/removeStep/{{$item->step_id}}"
+                                           class="bg-indigo-600 px-4 py-1 rounded text-white hover:bg-indigo-500 text-xs ml-4">Pašalinti</a>
+                                    </div>
                                 @endif
                             </div>
                             <div class="w-full md:w-6/12 rounded overflow-hidden t">
