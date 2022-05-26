@@ -36,6 +36,8 @@ Route::get('/fixerProfileEdit/{id}/approval', [repairmanController::class, 'show
 Route::post('/fixerProfileEdit/{id}/approval', [repairmanController::class, 'approveFixer']);
 Route::get('/addFixer', [repairmanController::class, 'showAddFixer']);
 Route::post('/addFixer', [repairmanController::class, 'addFixer']);
+Route::get('/showNotApproved', [repairmanController::class, 'showNotApproved']);
+Route::get('/approveNotApproved/{id}', [repairmanController::class, 'approveNotApproved']);
 
 
 Route::get('/locations', [disposalsController::class, 'showDisposals']);

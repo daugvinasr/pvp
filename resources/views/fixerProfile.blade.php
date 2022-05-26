@@ -83,6 +83,8 @@
                                     <i class="fa fa-minus mr-2 text-lg"></i>Nepatvirtintas
                                 @elseif($fixerData[0]->approved == 1)
                                     <i class="fa fa-check mr-2 text-lg text-green-400"></i>Patvirtintas
+                                @elseif($fixerData[0]->approved == 2)
+                                    <i class="fa fa-question mr-2 text-lg text-yellow-400"></i>Tvirtinamas
                                 @endif
                             </div>
                         </div>

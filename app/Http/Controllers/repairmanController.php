@@ -45,11 +45,11 @@ class repairmanController extends Controller
         request()->validate([
             'address' => 'required',
             'zipcode' => 'required|digits:5',
-            'idnumber' => 'required|digits:11|starts_with:1,2,3,4,5,6'
+//            'idnumber' => 'required|digits:11|starts_with:1,2,3,4,5,6'
         ]);
 
         $repairman = repairmans::where('repairmans_id', $id);
-        $repairman->update(['approved' => 1]);
+        $repairman->update(['approved' => 2]);
 
         return redirect("/fixerProfile/$id");
     }
@@ -143,4 +143,18 @@ class repairmanController extends Controller
             return redirect('/addFixer')->with('errormessage', 'Jūs jau turite tvarkytojo paskyrą!');
         }
     }
+
+    public function showNotApproved()
+    {
+        $fixersData = repairmans::where('approved', 2)->get();
+        return view('/showNotApproved', ['fixersData' => $fixersData]);
+    }
+
+    public function approveNotApproved($id)
+    {
+        $repairman = repairmans::where('repairmans_id', $id);
+        $repairman->update(['approved' => 1]);
+        return redirect('/showNotApproved');
+    }
+
 }
