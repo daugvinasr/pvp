@@ -5,7 +5,7 @@
             <div>
                 <section class="container mx-auto p-6 rounded-10">
                     @if(!$fixersData->isEmpty())
-                        <h2 class="md:text-3xl font-bold text-center text-gray-500">Nepatvirtinti taisytojai</h2>
+                        <h2 class="md:text-3xl font-bold text-center text-gray-500 mb-5">Nepatvirtinti taisytojai</h2>
                     @else
                         <h2 class="md:text-3xl font-bold text-center text-gray-500">Nėra nepatvirtintų taisytojų</h2>
                     @endif
