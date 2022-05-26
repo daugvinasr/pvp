@@ -19,22 +19,20 @@
                                         <th class="px-4 py-3 text-center">Pavardė</th>
                                         <th class="px-4 py-3 text-center">Miestas</th>
                                         <th class="px-4 py-3 text-center">Telefono numeris</th>
-                                        <th class="px-4 py-3 text-center">Aprašymas</th>
                                         <th class="px-4 py-3 text-center">Veiksmai</th>
                                     </tr>
                                 @endif
                                 </thead>
-                                <tbody class="bg-white">
+
                                 @if(!$fixersData->isEmpty())
                                     @foreach($fixersData as $data)
+                                        <tbody class="bg-white">
                                         <td class="px-4 py-3 text-ms font-semibold border text-center">{{$data->name}}</td>
                                         <td class="px-4 py-3 text-ms font-semibold border text-center">{{$data->surname}}
                                         </td>
                                         <td class="px-4 py-3 text-ms font-semibold border text-center">{{$data->city}}
                                         </td>
                                         <td class="px-4 py-3 text-ms font-semibold border text-center">{{$data->phone_number}}
-                                        </td>
-                                        <td class="px-4 py-3 text-ms font-semibold border text-center">{{$data->description}}
                                         </td>
                                         <td class="px-4 py-3 text-ms font-semibold border text-center">
                                             <a
@@ -43,9 +41,10 @@
                                                 type="submit">Patvirtinti
                                             </a>
                                         </td>
+                                </tbody>
                                     @endforeach
                                 @endif
-                                </tbody>
+
                             </table>
                         </div>
                     </div>
