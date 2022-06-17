@@ -8,8 +8,6 @@
         }
     </script>
     <div class="absolute left-72 mt-8">
-        <a href="/showGuide/{{$id}}"
-           class="bg-indigo-600 px-8 py-2 rounded text-white hover:bg-indigo-500 text-sm mr-4">Atgal</a>
     </div>
     <div class="h-screen bg-gray-100 justify-center">
         <div class="py-1 px-4 w-100 mt-20 bg-white rounded shadow-xl">
@@ -69,5 +67,10 @@
                             </div>
                         @endif
                     </div>
+                    <div class="flex items-center justify-center py-5">
+                        <a href="/showGuide/{{$id}}"
+                           class="bg-indigo-600 px-8 py-2 rounded text-white hover:bg-indigo-500 text-sm mr-4">Atgal</a>
+                    </div>
                 </div>
+
 @endsection

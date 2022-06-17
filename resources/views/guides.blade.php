@@ -1,14 +1,5 @@
 @extends('layouts.base')
 @section('content')
-    <div tabindex="0" class="focus:outline-none">
-            <div class="ml-2 mt-8">
-                <a href="/devices/{{$atgal}}"
-                   class="bg-indigo-600 px-8 py-2 rounded text-white hover:bg-indigo-500 text-sm mr-4">Atgal</a>
-                @if(session('role')=="admin")
-                    <a href="/addGuide/{{$temp}}"
-                       class="bg-indigo-600 px-8 py-2 rounded text-white hover:bg-indigo-500 text-sm">Sukurti gidą</a>
-                @endif
-            </div>
         <div class="mx-auto container py-8">
             <div class="flex flex-wrap items-center lg:justify-between justify-center">
 
@@ -52,7 +43,7 @@
                                     {{--                                        dienas</p>--}}
                                 </div>
                                 <p tabindex="0"
-                                   class="focus:outline-none text-xs text-gray-600 mt-2 h-12 ">{{$guide->description}}</p>
+                                   class="focus:outline-none text-xs text-gray-600 mt-2 h-12 overflow-hidden">{{$guide->description}}</p>
                                 {{--                                <div class="flex mt-4">--}}
                                 {{--                                    <div>--}}
                                 {{--                                        <p tabindex="0"--}}
@@ -75,6 +66,14 @@
                 @endforeach
 
 
+            </div>
+            <div class="flex items-center justify-center py-20">
+                <a href="/devices/{{$atgal}}"
+                   class="bg-indigo-600 px-8 py-2 rounded text-white hover:bg-indigo-500 text-sm mr-4">Atgal</a>
+                @if(session('role')=="admin")
+                    <a href="/addGuide/{{$temp}}"
+                       class="bg-indigo-600 px-8 py-2 rounded text-white hover:bg-indigo-500 text-sm">Sukurti gidą</a>
+                @endif
             </div>
         </div>
     </div>
