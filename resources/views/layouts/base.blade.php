@@ -40,8 +40,9 @@
                     @elseif(session('role') == 'admin')
                         <div class="hidden md:flex justify-around space-x-4">
                             <a href="/showOrders" class="hover:text-indigo-600 text-gray-700">Visi užsakymai</a>
-                            <a href="/showNotApproved" class="hover:text-indigo-600 text-gray-700">Nepatvirtinti
-                                taisytojai</a>
+                        </div>
+                        <div class="hidden md:flex justify-around space-x-4">
+                            <a href="/showNotApproved" class="hover:text-indigo-600 text-gray-700">Nepatvirtinti taisytojai</a>
                         </div>
                     @elseif(session('id_repairman') != null)
                         <div class="hidden md:flex justify-around space-x-4">
