@@ -4,7 +4,7 @@
             <div class="flex flex-wrap items-center lg:justify-between justify-center">
 
                 @foreach($guides as $guide)
-                    <div tabindex="0" class="focus:outline-none mx-2 w-72 mb-8">
+                    <div tabindex="0" class="rounded-sm shadow mx-2 w-72 mb-8">
 
                         <div class="bg-white ">
                             <div>

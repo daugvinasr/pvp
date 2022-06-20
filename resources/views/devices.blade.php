@@ -10,7 +10,10 @@
                         <a class="w-[200px] h-[290px] delay-50 duration-100 bg-white hover:bg-gray-100 p-5 rounded-lg group shadow-md"
                            href="/guides/{{$device->devices_id}}">
                             <!-- Image Cover -->
-                            <img class="rounded shadow w-[160px] h-[212px]" src="{{$device->photo_url}}"/>
+                            <div class=" w-[160px] h-[212px]">
+                                <img class="rounded shadow object-cover h-full w-full" src="{{$device->photo_url}}"/>
+                            </div>
+
                             <!-- Title -->
                             <h3 class="text-black font-bold mt-2 text-center">{{$device->name}}</h3>
                         </a>
