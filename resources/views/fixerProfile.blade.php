@@ -91,7 +91,7 @@
                         <div class="mt-10 py-6 border-t border-blueGray-200 text-center">
                             <div class="flex flex-wrap justify-center">
                                 <div class="py-2">
-                                    <p class="mb-4 text-lg text-blueGray-700 w-[700px] ">
+                                    <p class="mb-4 text-lg text-blueGray-700 w-[700px] mx-8">
                                         {{$fixerData[0]->description}}
                                     </p>
                                 </div>
