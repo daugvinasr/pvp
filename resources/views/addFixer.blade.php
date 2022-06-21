@@ -21,21 +21,21 @@
                             @enderror
                         </div>
                         <div class="mb-6">
-                            <label for="name" class="block text-gray-800 font-bold">Pavardė:</label>
+                            <label for="surname" class="block text-gray-800 font-bold">Pavardė:</label>
                             <input name="surname" type="text"  class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />
                             @error('surname')
                             {{ $message }}
                             @enderror
                         </div>
                         <div class="mb-6">
-                            <label for="name" class="block text-gray-800 font-bold">Miestas:</label>
+                            <label for="city" class="block text-gray-800 font-bold">Miestas:</label>
                             <input name="city" type="text"  class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />
                             @error('city')
                             {{ $message }}
                             @enderror
                         </div>
                         <div class="mb-6">
-                            <label for="name" class="block text-gray-800 font-bold">Detaliau apie paslaugas:</label>
+                            <label for="description" class="block text-gray-800 font-bold">Detaliau apie paslaugas:</label>
                             <textarea name="description" id="" cols="10" rows="10" class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600 h-24"></textarea>
                             {{--                            <input name="description" type="text"  class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />--}}
 
@@ -46,14 +46,14 @@
                     </div>
                     <div>
                         <div class="mb-6">
-                            <label for="name" class="block text-gray-800 font-bold">Telefono numeris:</label>
+                            <label for="phone_number" class="block text-gray-800 font-bold">Telefono numeris:</label>
                             <input name="phone_number" type="text"  class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />
                             @error('phone_number')
                             {{ $message }}
                             @enderror
                         </div>
                         <div class="mb-6">
-                            <label for="name" class="block text-gray-800 font-bold">El. paštas:</label>
+                            <label for="email" class="block text-gray-800 font-bold">El. paštas:</label>
                             <input name="email" type="email"  class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />
                             @error('email')
                             {{ $message }}
@@ -61,15 +61,15 @@
                         </div>
 
                         <div class="mb-6">
-                            <label for="name" class="block text-gray-800 font-bold">Nuotraukos nuorada:</label>
+                            <label for="photo_url" class="block text-gray-800 font-bold">Nuotraukos nuoroda:</label>
                             <input name="photo_url" type="url"  class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />
                             @error('photo_url')
                             {{ $message }}
                             @enderror
                         </div>
                         <div class="mb-6">
-                            <label for="name" class="block text-gray-800 font-bold">Specializacija:</label>
-                            <p for="name" class="text-sm text-gray-400">Sužymėkite laikant CTRL</p>
+                            <label for="categories_list[]" class="block text-gray-800 font-bold">Specializacija:</label>
+                            <p class="text-sm text-gray-400">Sužymėkite laikant CTRL</p>
                             <select name="categories_list[]" multiple="multiple" class="border-indigo-200 border-2 rounded-sm">
                                 @foreach($categories as $category)
                                     <option value="{{ $category->categories_id  }}">{{ $category->name }}</option>

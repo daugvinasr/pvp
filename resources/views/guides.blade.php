@@ -70,7 +70,7 @@
             <div class="flex items-center justify-center py-20">
                 <a href="/devices/{{$atgal}}"
                    class="bg-indigo-600 px-8 py-2 rounded text-white hover:bg-indigo-500 text-sm mr-4">Atgal</a>
-                @if(session('role')=="admin")
+                @if(session('role') == "admin" || session('role') == "editor")
                     <a href="/addGuide/{{$temp}}"
                        class="bg-indigo-600 px-8 py-2 rounded text-white hover:bg-indigo-500 text-sm">Sukurti gidą</a>
                 @endif

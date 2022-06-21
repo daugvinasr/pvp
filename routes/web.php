@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\repairmanController;
+use App\Http\Controllers\editorController;
 use App\Http\Controllers\profileController;
 use App\Http\Controllers\orderController;
 use App\Http\Controllers\guideController;
@@ -39,6 +40,10 @@ Route::post('/addFixer', [repairmanController::class, 'addFixer']);
 Route::get('/showNotApproved', [repairmanController::class, 'showNotApproved']);
 Route::get('/approveNotApproved/{id}', [repairmanController::class, 'approveNotApproved']);
 
+Route::get('/addEditor', [editorController::class, 'showAddEditor']);
+Route::post('/addEditor', [editorController::class, 'addEditor']);
+Route::get('/showPendingEditors', [editorController::class, 'showPendingEditors']);
+Route::get('/approvePendingEditor/{id}', [editorController::class, 'approvePendingEditor']);
 
 Route::get('/locations', [disposalsController::class, 'showDisposals']);
 Route::get('/login', [AuthController::class, 'showLogin']);

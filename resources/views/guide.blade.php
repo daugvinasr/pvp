@@ -15,7 +15,7 @@
                            class="text-indigo-700">{{$part->repairGuidesPartsToPart->name}} </a><br>
                     @endforeach
                 </div>
-                @if(session('role')=="admin")
+                @if(session('role') == "admin" || session('role') == "editor")
                     <div class="mt-6">
                         <a href="/addStep/{{$guideInfo->repair_guides_id}}"
                            class="bg-indigo-600 px-8 py-2 rounded text-white hover:bg-indigo-500 text-sm">Pridėti
@@ -35,7 +35,7 @@
                                 <h2 class="text-lg leading-tight font-bold text-indigo-600">{{$item->step_number}}
                                     . {{$item->title}}</h2>
                                 <p class="leading-normal pt-2">{{$item->description}}</p>
-                                @if(session('role')=="admin")
+                                @if(session('role') == "admin" || session('role') == "editor")
                                     <div class="flex flex-row-reverse pr-8 pt-4">
                                         <a href="/editStep/{{$item->step_id}}"
                                            class="bg-indigo-600 px-4 py-1 rounded text-white hover:bg-indigo-500 text-xs ml-4">Redaguoti</a>

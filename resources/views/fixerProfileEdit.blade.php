@@ -64,7 +64,7 @@
                             @enderror
                         </div>
                         <div class="mb-6">
-                            <label for="name" class="block text-gray-800 font-bold">Nuotraukos nuorada:</label>
+                            <label for="name" class="block text-gray-800 font-bold">Nuotraukos nuoroda:</label>
                             <input name="photo_url" type="url" value="{{$fixerData[0]->photo_url}}"
                                    class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600"/>
                             @error('photo_url')
