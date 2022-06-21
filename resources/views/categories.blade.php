@@ -24,7 +24,7 @@
             @if(session('role') == "admin" || session('role') == "editor")
                 <a href="/addCategories"
                    class="bg-indigo-600 px-8 py-2 rounded text-white hover:bg-indigo-500 text-sm">Pridėti kategoriją</a>
-            @else
+            @elseif(session('role') == "user" || session('role') == "fixer")
                 <p class="p-4 text-gray-700 text-justify mb-2">Norite prisidėti prie taisymo gidų rašymo?</p>
                 <a href="/addEditor" class="bg-indigo-600 px-8 py-2 rounded text-white hover:bg-indigo-500 text-sm">
                 Redaktoriaus registracija</a>
